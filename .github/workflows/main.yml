@@ -16,10 +16,10 @@ jobs:
         with:
           version: 7.20.0
           run_install: false
-          
+
       - name: Build project
         working-directory: .
-        run: pnpm ci && pnpm run build
+        run: pnpm install --prod --frozen-lockfile && pnpm run build
 
       - name: Deploy to firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
