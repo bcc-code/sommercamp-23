@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+    match /databases/{database}/documents {
+        function isAdmin() {
+            return exists(/databases/$(database)/documents/admins/$(request.auth.token.email))
+        }
+        match /admins/{adminId} {
+            allow read: if isAdmin() && adminId == request.auth.token.email
+        }
+        match /states/{gender} {
+            allow read: if true
+            allow read, write: if isAdmin()
+        }
+        match /questions/{question} {
+            allow read: if isAdmin()
+        }
+    }
+}

@@ -1,0 +1,23 @@
+hello: Hei, {name}!
+name: Norsks
+language: Språk
+username: Brukernavn
+password: Passord
+login: Login
+menu:
+  home: Hjem
+gender: Kjønn
+genders:
+  boy: 'Gutt'
+  girl: 'Jente'
+questions:
+  1:
+    text: What's my purpose?
+    options:
+      1: Passing the butter
+      2: Nothing
+  2:
+    text: What should I do next?
+    options:
+      1: Take a phone call
+      2: Work some more
