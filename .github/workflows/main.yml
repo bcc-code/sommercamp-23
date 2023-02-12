@@ -19,7 +19,7 @@ jobs:
 
       - name: Build project
         working-directory: .
-        run: pnpm install --prod --frozen-lockfile && pnpm run build
+        run: pnpm install --frozen-lockfile && pnpm run build
 
       - name: Deploy to firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
