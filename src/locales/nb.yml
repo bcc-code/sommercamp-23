@@ -1,5 +1,4 @@
-hello: Hei, {name}!
-name: Norsks
+name: Norsk
 language: Språk
 username: Brukernavn
 password: Passord
@@ -8,8 +7,8 @@ menu:
   home: Hjem
 gender: Kjønn
 genders:
-  boy: 'Gutt'
-  girl: 'Jente'
+  boy: Gutt
+  girl: Jente
 questions:
   1:
     text: What's my purpose?
