@@ -1,6 +1,6 @@
 <template>
     <div class="h-screen flex justify-center" :class="isAdmin ? '' : 'md:pt-4 md:pb-4'">
-        <div class="max-w-full bg-gray-200 w-full h-full flex flex-col"
+        <div class="max-w-full bg-dark-mint w-full h-full flex flex-col justify-center pb-24"
             :class="isAdmin ? '' : 'md:max-w-md md:shadow-lg md:rounded-xl'">
             <RouterView />
         </div>
@@ -25,7 +25,3 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 </script>
-
-<style>
-@import '@/assets/base.css';
-</style>

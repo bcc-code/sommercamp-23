@@ -21,3 +21,7 @@ questions:
     options:
       1: Take a phone call
       2: Work some more
+openVotes: Open votes
+closeVotes: Close votes
+waiting: Waiting for next question...
+noQuestion: No question selected

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,16 +8,35 @@
     position: relative;
     font-weight: normal;
 }
-
+html {
+    font-family: 'Work Sans', sans-serif;
+}
 body {
-    @apply bg-slate-400;
-    @apply text-neutral-800;
+    @apply bg-beige text-beige;
+    @apply ;
     min-height: 100vh;
-    transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+label {
+    @apply text-base font-semibold text-beige;
+}
+
+input, select {
+    @apply mt-1 block w-full rounded-md bg-dark-mint border-gray-300 py-2 pl-3 pr-10 text-base;
+}
+
+input:focus, select:focus {
+    @apply ring-none outline-none;
+}
+
+button {
+    @apply rounded-md px-6 py-3 shadow-sm;
+}
+
+button:focus {
+    @apply outline-none ring-none;
 }
