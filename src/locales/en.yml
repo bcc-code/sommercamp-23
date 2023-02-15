@@ -10,16 +10,36 @@ genders:
   boy: Boy
   girl: Girl
 questions:
-  1:
-    text: What's my purpose?
+  1b:
+    text: Hva skal Sindre velge?
     options:
-      1: Passing the butter
-      2: Nothing
-  2:
-    text: What should I do next?
+      1: Takke ja til å få skøytene slipt
+      2: Takke Eskild for tilbudet, men si ellers takk
+  2b:
+    text: Hva skal Sindre velge?
     options:
-      1: Take a phone call
-      2: Work some more
+      1: Vise forståelse for Eskild og si at han skal snakke med de andre guttene
+      2: Forsøke å skape fred ved å si at han tror Eskild tar feil
+  2g:
+    text: Hva skal Martine velge?
+    options:
+      1: Endre mening og si at hun blir med på å finne ut av hvem som står bak
+      2: Holde på sin beslutning, og si ifra om at det ikke føles riktig å blande seg inn i dette
+  3g:
+    text: Hva skal Martine velge?
+    options:
+      1: Nugatti
+      2: Nutella
+  4g:
+    text: Hva skal Martine velge?
+    options:
+      1: Gjøre noe for å stoppe Tik-Tok brukeren før det går for langt
+      2: Stå fast i beslutningen om å ikke blande seg
+  5b:
+    text: Hva skal Sindre velge? 
+    options:
+      1: Fortelle Eskild sannheten og be om unnskyldning
+      2: Ta med Eskild på bowling og kino
 openVotes: Open votes
 closeVotes: Close votes
 waiting: Waiting for next question...

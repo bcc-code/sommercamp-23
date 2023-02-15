@@ -1,18 +1,18 @@
 <template>
     <AdminLogin v-if="!adminUser" @submit="Login($event.username, $event.password)"/>
     <template v-else>
-        <div class="px-8 py-16 h-full flex flex-col justify-between">
-            <div class="rounded-md bg-taupe shadow text-center p-12">
+        <div class="px-8 pt-16 h-full flex flex-col justify-between">
+            <div class="rounded-md bg-taupe shadow text-center px-6 py-8">
                 <template v-if="!currentStep">
                     <p class="text-4xl">{{ $t('noQuestion') }}</p>
                 </template>
-                <div v-else :class="currentStep.length > 1 ? 'grid md:grid-cols-2 gap-x-5' : 'w-1/2 mx-auto'">
+                <div v-else :class="currentStep.length > 1 ? 'grid md:grid-cols-2 gap-x-5' : 'w-3/4 mx-auto'">
                     <Question v-for="(questionId, idx) in currentStep" :key="questionId" :column="idx" :question="getQuestionById(questionId)" />
                 </div>
             </div>
-            <div class="flex flex-col space-y-12">
+            <div class="flex flex-col space-y-8">
                <Sequence class="mx-auto" :items="sequence" :currentStep="currentStepIndex"/>
-                <div class="md:w-1/2 md:mx-auto grid grid-cols-2 gap-x-5 h-24">
+                <div class="md:w-1/2 md:mx-auto grid grid-cols-2 gap-x-5 h-20">
                     <button :class="{ 'opacity-50 cursor-default' : !canGoPrevious }" class="bg-dark-yellow" @click="previous">Previous</button>
                     <button :class="{ 'opacity-50 cursor-default' : !canGoNext }" class="bg-orange" @click="next">Next</button>
                 </div> 
@@ -47,10 +47,10 @@ const adminUser = useFirestore(adminUserQuery, null)
 
 const questionsQuery = computed(() => adminUser.value && collection(db, 'questions'))
 const questions = useFirestore(questionsQuery, [])
-const getQuestionById = (questionId: string) => questions.value.find((q) => q.id == questionId) || null
+const getQuestionById = (questionId: string) => questions.value.find((q) => q.id == questionId) || { id: questionId }
 
 const PAUSE = null
-const sequence = [PAUSE, ['1'], PAUSE, ['1', '2'], PAUSE]
+const sequence = [PAUSE, ['1b'], PAUSE, ['2b', '2g'], PAUSE, ['3g'], PAUSE, ['4g'], PAUSE, ['5b']]
 const currentStepIndex = ref<number>(0)
 const currentStep = computed(() => sequence[currentStepIndex.value])
 const canGoPrevious = computed(() => currentStepIndex.value > 0)
@@ -61,8 +61,7 @@ const next = () => { if (canGoNext.value) currentStepIndex.value++ }
 watch(() => currentStep.value, async () => {
     let states: {[key: string]: string }= { boy: '0', girl: '0' }
     if (currentStep.value) currentStep.value.forEach((q) => {
-        const question = getQuestionById(q)
-        if (question) states[question.target] = q 
+        if (q) states[q.slice(-1) == 'b' ? 'boy' : 'girl'] = q 
     })
     await Promise.all(Object.keys(states).map((gender) => updateDoc(doc(db, 'states', gender), { question: states[gender] })))
 })

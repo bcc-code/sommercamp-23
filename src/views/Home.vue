@@ -6,14 +6,23 @@
         </template>
         <div v-else class="flex flex-col space-y-5">
             <p class="text-4xl text-shadow">{{ $t(`questions.${state.question}.text`) }}</p>
-            <button @click="submitAnswer(1)" class="bg-dark-yellow font-semi py-5">{{ $t(`questions.${state.question}.options.1`) }}</button>
-            <button @click="submitAnswer(2)" class="bg-orange py-5">{{ $t(`questions.${state.question}.options.2`) }}</button>
+            <button v-for="option in ['1', '2']" :key="'option-' + option"
+                @click="submitAnswer(option)" 
+                class="font-semibold py-5"
+                :class="{
+                    'cursor-default': answer,
+                    'opacity-50': answer && answer != option,
+                    // TODO: Add a glowing effect on selected answer
+                    'bg-dark-yellow': option == '1',
+                    'bg-orange': option == '2'
+                }">{{ $t(`questions.${state.question}.options.${option}`) }}</button>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import axios from 'axios'
+import { ref, computed, watch } from 'vue'
 import { doc, getFirestore } from 'firebase/firestore'
 import { useFirestore } from '@vueuse/firebase'
 import { useLocalStorage } from '@vueuse/core';
@@ -23,8 +32,15 @@ const settings = useLocalStorage('pc23-options', {}) as any
 
 const stateRef = computed(() => settings.value && settings.value!.gender && doc(db, 'states', settings.value!.gender))
 const state = useFirestore(stateRef, null)
+let answer = ref<string | null>(null)
+watch(() => state.value && state.value.question, () => {
+    answer = useLocalStorage<string | null>('pc23-question-' + state.value!.question, null)
+})
 
-const submitAnswer = (option: number) => {
-    console.log("SUBMITTING ANSWER ", option)
+const submitAnswer = (option: string) => {
+    if (answer.value) return;
+    answer.value = option;
+    // Uncomment this line when ready to test E2E
+    //axios.get(`https://counterp23.bcc.media/count/${state.value.question}/${option}`)
 }
 </script>
