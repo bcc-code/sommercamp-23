@@ -11,13 +11,14 @@ export default defineConfig({
                 screenDesktop: 'calc(100vh - 56px)'
             },
             colors: {
+                'mint': '#BDDABB',
                 'dark-mint': '#536C58',
                 'beige': '#FEECD0',
+                'orange': '#F09C44',
                 'yellow': '#F5D47C',
-                'taupe': '#5E5144',
-                'dark-brown': '#422E1C',
                 'dark-yellow': '#B89033',
-                'orange': '#F09C44'
+                'taupe': '#5E5144',
+                'dark-brown': '#422E1C'
             }
         }
     }
