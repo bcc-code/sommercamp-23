@@ -5,6 +5,8 @@
 declare module 'vue' {
   export interface GlobalComponents {
     AdminLogin: typeof import('./src/components/AdminLogin.vue')['default']
+    Question: typeof import('./src/components/Question.vue')['default']
+    Sequence: typeof import('./src/components/Sequence.vue')['default']
     Settings: typeof import('./src/components/Settings.vue')['default']
   }
 }

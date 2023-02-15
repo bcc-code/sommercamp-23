@@ -1,46 +1,28 @@
 <template>
     <AdminLogin v-if="!adminUser" @submit="Login($event.username, $event.password)"/>
     <template v-else>
-        <div class="grid grid-cols-4 gap-x-5 px-8 py-16">
-            <div class="overflow-hidden rounded-md bg-taupe shadow">
-                <ul role="list" class="divide-y divide-beige">
-                    <li class="px-6 py-4 cursor-pointer" v-for="question in questions" :key="'question-' + question" @click="selectedQuestionId = question.id"
-                        :class="selectedQuestionId == question.id ? 'bg-yellow text-dark-brown' : 'hover:bg-beige hover:bg-opacity-10'">
-                        {{ $t(getQuestion(question.id)) }}
-                    </li>
-                </ul>
-            </div>
-            <div class="col-span-3 h-full rounded-md bg-taupe shadow text-center p-12">
-                <template v-if="!(selectedQuestionId && selectedQuestion)">
+        <div class="px-8 py-16 h-full flex flex-col justify-between">
+            <div class="rounded-md bg-taupe shadow text-center p-12">
+                <template v-if="!currentStep">
                     <p class="text-4xl">{{ $t('noQuestion') }}</p>
                 </template>
-                <div v-else class="space-y-12">
-                    <h2 class="text-4xl">
-                        {{ $t(getQuestion(selectedQuestionId)) }} &nbsp;
-                        <span v-if="selectedTarget == 'girl'" class="inline-flex align-middle rounded-full bg-pink-100 px-3 py-0.5 text-base font-medium text-pink-800">Girls</span>
-                        <span v-if="selectedTarget == 'boy'" class="inline-flex align-middle rounded-full bg-blue-100 px-3 py-0.5 text-base font-medium text-blue-800">Boys</span>
-                    </h2>
-                    <div class="flex flex-col space-y-5">
-                        <div v-for="idx in ['1','2']" :index="'option-'+idx" class="flex items-center gap-x-2">
-                            <p class="text-lg w-48">{{ $t(getOption(selectedQuestionId, idx)) }}</p>
-                            <div class="w-full h-4 bg-beige bg-opacity-10 rounded-full">
-                                <div class="h-4 rounded-full" :class="['bg-dark-yellow', 'bg-orange'][Number(idx)-1]" :style="{ width:  + optionPercent(idx) + '%' }"></div>
-                            </div>  
-                            <span class="text-lg font-bold">{{ optionPercent(idx) }}%</span>
-                        </div>
-                    </div>
-                    <div class="mt-5 grid grid-cols-2 gap-x-5">
-                        <button @click="openVotes" class="py-5 bg-yellow text-taupe text-lg font-semibold" :class="{ 'opacity-50' : votesAreOpen(selectedQuestionId) }">{{ $t('openVotes') }}</button>
-                        <button @click="closeVotes" class="py-5 bg-dark-mint -500 text-beige text-lg font-semibold" :class="{ 'opacity-50' : !votesAreOpen(selectedQuestionId) }">{{ $t('closeVotes') }}</button>
-                    </div>
+                <div v-else :class="currentStep.length > 1 ? 'grid md:grid-cols-2 gap-x-5' : 'w-1/2 mx-auto'">
+                    <Question v-for="(questionId, idx) in currentStep" :key="questionId" :column="idx" :question="getQuestionById(questionId)" />
                 </div>
             </div>
+            <div class="flex flex-col space-y-12">
+               <Sequence class="mx-auto" :items="sequence" :currentStep="currentStepIndex"/>
+                <div class="md:w-1/2 md:mx-auto grid grid-cols-2 gap-x-5 h-24">
+                    <button :class="{ 'opacity-50 cursor-default' : !canGoPrevious }" class="bg-dark-yellow" @click="previous">Previous</button>
+                    <button :class="{ 'opacity-50 cursor-default' : !canGoNext }" class="bg-orange" @click="next">Next</button>
+                </div> 
+            </div> 
         </div>
     </template>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'firebase/auth';
 import { collection, doc, getFirestore, updateDoc } from 'firebase/firestore'
 import { useFirestore, useAuth } from '@vueuse/firebase'
@@ -65,18 +47,23 @@ const adminUser = useFirestore(adminUserQuery, null)
 
 const questionsQuery = computed(() => adminUser.value && collection(db, 'questions'))
 const questions = useFirestore(questionsQuery, [])
-const statesQuery = computed(() => adminUser.value && collection(db, 'states'))
-const states = useFirestore(statesQuery, [])
+const getQuestionById = (questionId: string) => questions.value.find((q) => q.id == questionId) || null
 
-const getQuestion = (index: string) => `questions.${index}.text`
-const getOption = (question: string, option: string) =>   `questions.${question}.options.${option}`
+const PAUSE = null
+const sequence = [PAUSE, ['1'], PAUSE, ['1', '2'], PAUSE]
+const currentStepIndex = ref<number>(0)
+const currentStep = computed(() => sequence[currentStepIndex.value])
+const canGoPrevious = computed(() => currentStepIndex.value > 0)
+const previous = () => { if (canGoPrevious.value) currentStepIndex.value--}
+const canGoNext = computed(() => currentStepIndex.value < sequence.length - 1)
+const next = () => { if (canGoNext.value) currentStepIndex.value++ }
 
-const selectedQuestionId = ref<string|null>(null)
-const selectedQuestion = computed(() => questions.value.find((q) => q.id == selectedQuestionId.value))
-const selectedTarget = computed(() => selectedQuestion.value && selectedQuestion.value.target)
-const optionPercent = (option: string) => selectedQuestion.value && selectedQuestion.value.options && selectedQuestion.value.options[option] || 0
-
-const votesAreOpen = (question: string) => states.value.find((s) => s.question == question)
-const openVotes = () => updateDoc(doc(db, 'states', selectedTarget.value), { question: selectedQuestionId.value})
-const closeVotes = () => updateDoc(doc(db, 'states', selectedTarget.value), { question: 0 })
+watch(() => currentStep.value, async () => {
+    let states: {[key: string]: string }= { boy: '0', girl: '0' }
+    if (currentStep.value) currentStep.value.forEach((q) => {
+        const question = getQuestionById(q)
+        if (question) states[question.target] = q 
+    })
+    await Promise.all(Object.keys(states).map((gender) => updateDoc(doc(db, 'states', gender), { question: states[gender] })))
+})
 </script>
