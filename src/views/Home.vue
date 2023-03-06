@@ -4,17 +4,17 @@
         <template v-if="state.question == '0'">
             <p>{{$t('waiting')}}</p>
         </template>
-        <div v-else class="flex flex-col space-y-5">
-            <p class="text-4xl text-shadow">{{ $t(`questions.${state.question}.text`) }}</p>
-            <button v-for="option in ['1', '2']" :key="'option-' + option"
+        <div v-else class="" :class="isFirstQuestion ? 'grid grid-cols-2 gap-x-2 gap-y-2' : 'flex flex-col space-y-5'">
+            <p class="col-span-full mb-5 text-4xl text-shadow">{{ $t(`questions.${state.question}.text`) }}</p>
+            <button v-for="option in getOptions(state.question)" :key="'option-' + option"
                 @click="submitAnswer(option)" 
-                class="font-semibold py-5"
+                class="font-semibold py-5 bg-dark-yellow"
                 :class="{
                     'cursor-default': answer,
                     'opacity-50': answer && answer != option,
                     // TODO: Add a glowing effect on selected answer
-                    'bg-dark-yellow': option == '1',
-                    'bg-orange': option == '2'
+                    'bg-dark-yellow': !isFirstQuestion && option == '1',
+                    'bg-orange': !isFirstQuestion && option == '2'
                 }">{{ $t(`questions.${state.question}.options.${option}`) }}</button>
         </div>
     </div>
@@ -26,7 +26,12 @@ import { ref, computed, watch } from 'vue'
 import { doc, getFirestore } from 'firebase/firestore'
 import { useFirestore } from '@vueuse/firebase'
 import { useLocalStorage } from '@vueuse/core';
+import { useI18n } from 'vue-i18n';
 const db = getFirestore()
+
+const { getLocaleMessage, locale } = useI18n()
+const getOptions = (question: string) => Object.keys((getLocaleMessage(locale.value)['questions'] as { [key: string]: any })[question]['options'])
+const isFirstQuestion = computed(() => state.value && state.value.question == '0a')
 
 const settings = useLocalStorage('pc23-options', {}) as any
 

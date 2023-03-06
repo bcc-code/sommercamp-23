@@ -4,7 +4,7 @@
         <div class="px-8 pt-16 h-full flex flex-col justify-between">
             <div class="rounded-md bg-taupe shadow text-center px-6 py-8">
                 <template v-if="!currentStep">
-                    <p class="text-4xl">{{ $t('noQuestion') }}</p>
+                    <p class="text-4xl">No question selected</p>
                 </template>
                 <div v-else :class="currentStep.length > 1 ? 'grid md:grid-cols-2 gap-x-5' : 'w-3/4 mx-auto'">
                     <Question v-for="(questionId, idx) in currentStep" :key="questionId" :column="idx" :question="getQuestionById(questionId)" />
@@ -50,7 +50,7 @@ const questions = useFirestore(questionsQuery, [])
 const getQuestionById = (questionId: string) => questions.value.find((q) => q.id == questionId) || { id: questionId }
 
 const PAUSE = null
-const sequence = [PAUSE, ['1b'], PAUSE, ['2b', '2g'], PAUSE, ['3g'], PAUSE, ['4g'], PAUSE, ['5b']]
+const sequence = [PAUSE, ['0a'], PAUSE, ['1b'], PAUSE, ['2b', '2g'], PAUSE, ['3g'], PAUSE, ['4g'], PAUSE, ['5b'], PAUSE, ['6g'], PAUSE, ['7b']]
 const currentStepIndex = ref<number>(0)
 const currentStep = computed(() => sequence[currentStepIndex.value])
 const canGoPrevious = computed(() => currentStepIndex.value > 0)
@@ -58,10 +58,12 @@ const previous = () => { if (canGoPrevious.value) currentStepIndex.value--}
 const canGoNext = computed(() => currentStepIndex.value < sequence.length - 1)
 const next = () => { if (canGoNext.value) currentStepIndex.value++ }
 
+
 watch(() => currentStep.value, async () => {
     let states: {[key: string]: string }= { boy: '0', girl: '0' }
     if (currentStep.value) currentStep.value.forEach((q) => {
-        if (q) states[q.slice(-1) == 'b' ? 'boy' : 'girl'] = q 
+        const targets = q.slice(-1) == 'b' ? ['boy'] : q.slice(-1) == 'g' ? ['girl'] : ['boy', 'girl']
+        if (q) targets.forEach((t) => states[t] = q)
     })
     await Promise.all(Object.keys(states).map((gender) => updateDoc(doc(db, 'states', gender), { question: states[gender] })))
 })

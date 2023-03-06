@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: () => import('../views/Admin.vue')
+    },
+    {
+      path: '/overlay',
+      name: 'overlay',
+      component: () => import('../views/Overlay.vue')
     }
   ]
 })

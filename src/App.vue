@@ -14,7 +14,7 @@ import { initializeApp } from 'firebase/app'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const isAdmin = computed(() => route.path.startsWith("/admin"))
+const isAdmin = computed(() => route.path.startsWith("/admin")|| route.path.startsWith('/overlay'))
 const firebaseConfig = {
     apiKey: "AIzaSyCbBVrHKMLR4M8j5bTCQnd2wIBgXaSLCdA",
     authDomain: "paske-2023.firebaseapp.com",

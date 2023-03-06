@@ -1,11 +1,11 @@
 <template>
     <main class="w-full max-w-lg mx-auto flex flex-col space-y-5 bg-taupe px-4 py-8 rounded-lg mt-24">
         <div>
-            <label for="username">{{$t('username')}}</label>
+            <label for="username">Username</label>
             <input v-model="username" id="username" name="username"  type="text">
         </div>
         <div>
-            <label for="password">{{$t('password')}}</label>
+            <label for="password">Password</label>
             <input v-model="password" id="password" name="password" type="password">
         </div>
         <button type="button" @click="emit('submit', { username, password })" class="border border-transparent text-base font-medium text-beige">{{$t('login') }}</button>

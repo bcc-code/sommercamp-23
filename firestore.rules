@@ -12,7 +12,7 @@ service cloud.firestore {
             allow read, write: if isAdmin()
         }
         match /questions/{question} {
-            allow read: if isAdmin()
+            allow read: if true
         }
     }
 }
