@@ -2,7 +2,7 @@
     <AdminLogin v-if="!adminUser" @submit="Login($event.username, $event.password)"/>
     <template v-else>
         <div class="px-8 pt-16 h-full flex flex-col justify-between">
-            <div class="rounded-md bg-taupe shadow text-center px-6 py-8">
+            <div class="rounded-md bg-dark-mint shadow text-center px-6 py-8">
                 <template v-if="!currentStep">
                     <p class="text-4xl">No question selected</p>
                 </template>

@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap');
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    position: relative;
-    font-weight: normal;
+@font-face {
+    font-family: 'Eurostile';
+    font-style: regular;
+    font-weight: 600;
+    src: local(''), url('./eurostile.ttf')
 }
+
 html {
     font-family: 'Work Sans', sans-serif;
 }
-body {
+
+.main {
     @apply bg-beige text-beige;
     @apply ;
     min-height: 100vh;
@@ -26,7 +26,7 @@ label {
 }
 
 input, select {
-    @apply mt-1 block w-full rounded-md bg-dark-mint border-gray-300 py-2 pl-3 pr-10 text-base;
+    @apply mt-1 block w-full rounded-md bg-taupe border border-beige/25 py-4 pl-3 pr-10 text-base;
 }
 
 input:focus, select:focus {
@@ -39,4 +39,32 @@ button {
 
 button:focus {
     @apply outline-none ring-none;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Eurostile', sans-serif;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(229, 231, 235, var(--bg-opacity));
+    cursor: pointer;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #5f6770;
+}
+
+.scrollbar-none {
+    scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+display: none;
 }

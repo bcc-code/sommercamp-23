@@ -1,42 +1,36 @@
 <template>
     <Settings v-if="!(settings && settings.gender)" @submit="settings = $event"/>
-    <div v-else-if="state" class="px-4 text-center">
-        <template v-if="state.question == '0'">
-            <p>{{$t('waiting')}}</p>
+    <template v-else-if="state">
+        <template v-if="!hasQuestion">
+            <h3 class="text-center px-12 uppercase font-bold text-3xl" >{{$t('waiting')}}</h3>
         </template>
-        <div v-else class="" :class="isFirstQuestion ? 'grid grid-cols-2 gap-x-2 gap-y-2' : 'flex flex-col space-y-5'">
-            <p class="col-span-full mb-5 text-4xl text-shadow">{{ $t(`questions.${state.question}.text`) }}</p>
+        <FirstQuestion v-else-if="isFirstQuestion" @submit="submitAnswer" :answer="answer"/>
+        <div v-else class="text-center flex flex-col space-y-5">
+            <h3 class="col-span-full mb-5 text-shadow px-16 uppercase font-bold text-3xl text-shadow-xl">{{ $t(getQuestionKey(state.question)) }}</h3>
             <button v-for="option in getOptions(state.question)" :key="'option-' + option"
                 @click="submitAnswer(option)" 
-                class="font-semibold py-5 bg-dark-yellow"
+                class="w-full h-24 text-sm font-normal py-1 px-8 bg-contain bg-transparent bg-no-repeat bg-center"
                 :class="{
                     'cursor-default': answer,
                     'opacity-50': answer && answer != option,
-                    // TODO: Add a glowing effect on selected answer
-                    'bg-dark-yellow': !isFirstQuestion && option == '1',
-                    'bg-orange': !isFirstQuestion && option == '2'
-                }">{{ $t(`questions.${state.question}.options.${option}`) }}</button>
+                }"
+                :style="{ backgroundImage: `url(/img/option${option}.webp)` }">{{ $t(getOption(state.question,option)) }}</button>
         </div>
-    </div>
+    </template>
 </template>
 
 <script setup lang="ts">
+import FirstQuestion from '@/components/FirstQuestion.vue';
+import { useOptions } from '@/composables/options';
 import axios from 'axios'
-import { ref, computed, watch } from 'vue'
-import { doc, getFirestore } from 'firebase/firestore'
-import { useFirestore } from '@vueuse/firebase'
+import { ref, watch } from 'vue'
 import { useLocalStorage } from '@vueuse/core';
-import { useI18n } from 'vue-i18n';
-const db = getFirestore()
+import { useState } from '@/composables/state';
 
-const { getLocaleMessage, locale } = useI18n()
-const getOptions = (question: string) => Object.keys((getLocaleMessage(locale.value)['questions'] as { [key: string]: any })[question]['options'])
-const isFirstQuestion = computed(() => state.value && state.value.question == '0a')
+const { state, settings, isFirstQuestion, hasQuestion } = useState()
 
-const settings = useLocalStorage('pc23-options', {}) as any
+const {  getOptions, getOption, getQuestionKey } = useOptions()
 
-const stateRef = computed(() => settings.value && settings.value!.gender && doc(db, 'states', settings.value!.gender))
-const state = useFirestore(stateRef, null)
 let answer = ref<string | null>(null)
 watch(() => state.value && state.value.question, () => {
     answer = useLocalStorage<string | null>('pc23-question-' + state.value!.question, null)

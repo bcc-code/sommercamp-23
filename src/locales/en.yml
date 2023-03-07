@@ -8,7 +8,7 @@ genders:
   girl: Girl
 questions:
   0a:
-    text: Hvem tror du er skurken?
+    text: Hvem tror du styrer TikTok brukeren?
     options:
       1: Martine
       2: Sindre
@@ -60,4 +60,4 @@ questions:
     options:
       1: Bevare roen i gjengen ved å unngå å svare.
       2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Waiting for next question...
+waiting: Waiting for next question

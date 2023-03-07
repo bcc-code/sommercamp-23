@@ -1,6 +1,7 @@
 <template>
-    <div class="mx-5 text-center">
-        <div class="flex flex-col space-y-5 px-4 py-8 bg-taupe rounded-lg mb-12 ">
+    <div class="mx-12 ">
+        <img class="w-40 mx-auto pt-12 mb-12" src="/img/logo.webp">
+        <div class="flex flex-col space-y-5 px-4 py-8 rounded-lg mb-12 ">
             <div>
                 <label for="language">{{$t('language')}}</label>
                 <select v-model="locale" id="language" name="language">
@@ -14,7 +15,9 @@
                 </select>
             </div>
         </div>  
-        <button type="button" @click="emit('submit', { gender, locale })" class="bg-yellow text-taupe text-base font-semibold">{{$t('login') }}</button>
+        <div class="w-full text-center">
+            <button type="button" @click="emit('submit', { gender, locale })" class="bg-yellow text-taupe text-base font-semibold">{{$t('login') }}</button>
+        </div>
     </div>
     
 </template>
