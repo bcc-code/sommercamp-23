@@ -8,7 +8,7 @@
         <div v-else class="text-center flex flex-col space-y-5">
             <h3 class="col-span-full mb-5 text-shadow px-16 uppercase font-bold text-3xl text-shadow-xl">{{ $t(getQuestionKey(state.question)) }}</h3>
             <button v-for="option in getOptions(state.question)" :key="'option-' + option"
-                @click="submitAnswer(option)" 
+                @click="submitAnswer(option)"
                 class="w-full h-24 text-sm font-normal py-1 px-8 bg-contain bg-transparent bg-no-repeat bg-center"
                 :class="{
                     'cursor-default': answer,
@@ -40,6 +40,6 @@ const submitAnswer = (option: string) => {
     if (answer.value) return;
     answer.value = option;
     // Uncomment this line when ready to test E2E
-    //axios.get(`https://counterp23.bcc.media/count/${state.value.question}/${option}`)
+    axios.get(`https://counterp23.bcc.media/count/${state.value.question}/${option}`)
 }
 </script>
