@@ -12,7 +12,7 @@
                 <div class="w-full h-4 bg-beige bg-opacity-10 rounded-full">
                     <div class="h-4 rounded-full bg-orange" :style="{ width:  + optionPercent(question, idx) + '%' }"></div>
                 </div>  
-                <span class="text-lg font-bold">{{ optionPercent(question, idx) }}%</span>
+                <span class="text-lg font-bold">{{ optionPercent(question, idx).toFixed(2)}}%</span>
             </div>
         </div>
     </div>

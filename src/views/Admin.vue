@@ -1,13 +1,13 @@
 <template>
     <AdminLogin v-if="!adminUser" @submit="Login($event.username, $event.password)"/>
     <template v-else>
-        <div class="px-8 pt-16 h-full flex flex-col justify-between">
-            <div class="rounded-md bg-dark-mint shadow text-center px-6 py-8">
-                <template v-if="!currentStep">
-                    <p class="text-4xl">No question selected</p>
+        <div class="px-8 pt-16 pb-12 h-full flex flex-col justify-between">
+            <div class="rounded-md bg-taupe shadow text-center px-6 py-8">
+                <template v-if="currentStepQuestions.length == 0">
+                    <h2 class="text-4xl">No question selected</h2>
                 </template>
-                <div v-else :class="currentStep.length > 1 ? 'grid md:grid-cols-2 gap-x-5' : 'w-3/4 mx-auto'">
-                    <Question v-for="(questionId, idx) in currentStep" :key="questionId" :column="idx" :question="getQuestionById(questionId)" />
+                <div v-else :class="currentStepQuestions.length > 1 ? 'grid md:grid-cols-2 gap-x-5' : 'w-3/4 mx-auto'">
+                    <Question v-for="(questionId, idx) in currentStepQuestions" :key="questionId" :column="idx" :question="getQuestionById(questionId)" />
                 </div>
             </div>
             <div class="flex flex-col space-y-8">
@@ -23,48 +23,42 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from 'firebase/auth';
-import { collection, doc, getFirestore, updateDoc } from 'firebase/firestore'
-import { useFirestore, useAuth } from '@vueuse/firebase'
+import { doc, getFirestore, updateDoc } from 'firebase/firestore'
+import { useQuestions } from '@/composables/questions';
+import { useAdmin } from '@/composables/admin';
+import { useState } from '@/composables/state';
 
+const { adminUser, Login} = useAdmin()
+const { getQuestionById, isPause } = useQuestions()
+const { states } = useState()
 const db = getFirestore()
-const auth = getAuth()
 
-const Login = (username: string, password: string) => {
-    setPersistence(auth, browserLocalPersistence).then(() => {
-        signInWithEmailAndPassword(auth, username, password)
-        .catch(() => {
-            //TODO: Show invalid credentials message
-            console.log('Invalid username or password')
-        })
-    })
-}
+const sequence = [['p0'], ['0a'], ['p1'], ['1b', 'p1'], ['p2'], ['2b', '2g'], ['p3'], ['3g', 'p3'], ['p4'], ['4g', 'p4'], ['p5'], ['5b', 'p5'], ['p6'], ['6g', 'p6'], ['p7'], ['7b', 'p7'], ['p8']]
 
-const { user } = useAuth(auth)
-
-const adminUserQuery = computed(() => user.value && user.value.email && doc(db, 'admins', user.value.email))
-const adminUser = useFirestore(adminUserQuery, null)
-
-const questionsQuery = computed(() => adminUser.value && collection(db, 'questions'))
-const questions = useFirestore(questionsQuery, [])
-const getQuestionById = (questionId: string) => questions.value.find((q) => q.id == questionId) || { id: questionId }
-
-const PAUSE = null
-const sequence = [PAUSE, ['0a'], PAUSE, ['1b'], PAUSE, ['2b', '2g'], PAUSE, ['3g'], PAUSE, ['4g'], PAUSE, ['5b'], PAUSE, ['6g'], PAUSE, ['7b']]
 const currentStepIndex = ref<number>(0)
 const currentStep = computed(() => sequence[currentStepIndex.value])
+const currentStepQuestions = computed(() => currentStep.value.filter((q) => !isPause(q)))
 const canGoPrevious = computed(() => currentStepIndex.value > 0)
 const previous = () => { if (canGoPrevious.value) currentStepIndex.value--}
 const canGoNext = computed(() => currentStepIndex.value < sequence.length - 1)
 const next = () => { if (canGoNext.value) currentStepIndex.value++ }
 
-
 watch(() => currentStep.value, async () => {
-    let states: {[key: string]: string }= { boy: '0', girl: '0' }
-    if (currentStep.value) currentStep.value.forEach((q) => {
+    let pauseStep = currentStep.value.find((q) => isPause(q)) || 'p0'
+    let states: {[key: string]: string }= { boy: pauseStep, girl: pauseStep }
+    if (currentStep.value && currentStep.value.every((q) => isPause(q))) states = { boy: currentStep.value[0], girl: currentStep.value[0] }
+    else if (currentStep.value) currentStep.value.forEach((q) => {
+        if (isPause(q)) return
         const targets = q.slice(-1) == 'b' ? ['boy'] : q.slice(-1) == 'g' ? ['girl'] : ['boy', 'girl']
         if (q) targets.forEach((t) => states[t] = q)
     })
     await Promise.all(Object.keys(states).map((gender) => updateDoc(doc(db, 'states', gender), { question: states[gender] })))
+})
+
+watch(() => states.value, () => {
+    const questions = states.value.map((doc) => doc.question)
+    const sequenceStepIndex = sequence.findIndex((s) => s && questions.every((q) => s.includes(q)))
+    if (sequenceStepIndex < 0) return
+    else currentStepIndex.value = sequenceStepIndex;  
 })
 </script>

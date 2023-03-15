@@ -7,12 +7,14 @@
                 </div>
                 <div class="relative flex h-12 w-12 items-center justify-center rounded-full transition-colors border-4 border-dark-yellow"
                     :class="currentStep == idx ? 'bg-yellow text-dark-brown' : currentStep >= idx ? 'bg-dark-yellow text-beige' : 'rounded-full bg-beige text-taupe'">
-                    <span class="font-bold">{{ item == null ? 'P' : item.join(',') }}</span>
+                    <span class="font-bold">{{ item.every(isPause) ? 'P' : item.filter((q: string) => !isPause(q)).join(',') }}</span>
                 </div>
             </li>
         </ol>
     </nav>
 </template>
 <script setup lang="ts">
+import { useQuestions } from '@/composables/questions';
 defineProps(["items", "currentStep"])
+const { isPause } = useQuestions()
 </script>

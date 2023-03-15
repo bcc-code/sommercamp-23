@@ -19,7 +19,11 @@ export default defineConfig({
                 'dark-yellow': '#B89033',
                 'taupe': '#5E5144',
                 'dark-brown': '#422E1C'
+            },
+            fontSize: {
+                sm: '0.850rem'
             }
-        }
+        },
+        
     }
 })

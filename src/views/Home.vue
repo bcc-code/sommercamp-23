@@ -1,22 +1,25 @@
 <template>
-    <Settings v-if="!(settings && settings.gender)" @submit="settings = $event"/>
-    <template v-else-if="state">
+    <Settings v-if="!gender" @submit="settings = $event"/>
+    <Transition v-else-if="state" mode="out-in">
         <template v-if="!hasQuestion">
-            <h3 class="text-center px-12 uppercase font-bold text-3xl" >{{$t('waiting')}}</h3>
+            <h3 class="text-center px-16 uppercase font-bold text-3xl" >{{$t('waiting')}}</h3>
         </template>
         <FirstQuestion v-else-if="isFirstQuestion" @submit="submitAnswer" :answer="answer"/>
-        <div v-else class="text-center flex flex-col space-y-5">
-            <h3 class="col-span-full mb-5 text-shadow px-16 uppercase font-bold text-3xl text-shadow-xl">{{ $t(getQuestionKey(state.question)) }}</h3>
+        <div v-else class="text-center flex flex-col space-y-5 px-8 -mt-32">
+            <h3 class="col-span-full mb-5 text-shadow px-13 uppercase font-bold text-3xl text-shadow-xl">{{ $t(getQuestionKey(state.question)) }}</h3>
             <button v-for="option in getOptions(state.question)" :key="'option-' + option"
                 @click="submitAnswer(option)" 
-                class="w-full h-24 text-sm font-normal py-1 px-8 bg-contain bg-transparent bg-no-repeat bg-center"
+                class="w-full h-24 font-normal py-1 px-6 bg-contain bg-transparent bg-no-repeat bg-center transition-opacity"
                 :class="{
                     'cursor-default': answer,
-                    'opacity-50': answer && answer != option,
+                    'opacity-40': answer && answer != option,
+                    'text-lg': ['1b', '3g'].includes(state.question),
+                    'text-base': ['7b'].includes(state.question),
+                    'text-sm': ['2b', '2g', '5b', '6g', '4g'].includes(state.question)
                 }"
                 :style="{ backgroundImage: `url(/img/option${option}.webp)` }">{{ $t(getOption(state.question,option)) }}</button>
         </div>
-    </template>
+    </Transition>
 </template>
 
 <script setup lang="ts">
@@ -26,8 +29,10 @@ import axios from 'axios'
 import { ref, watch } from 'vue'
 import { useLocalStorage } from '@vueuse/core';
 import { useState } from '@/composables/state';
+import { useSettings } from '@/composables/settings';
 
-const { state, settings, isFirstQuestion, hasQuestion } = useState()
+const { settings, gender } = useSettings()
+const { state, isFirstQuestion, hasQuestion } = useState()
 
 const {  getOptions, getOption, getQuestionKey } = useOptions()
 
@@ -37,9 +42,18 @@ watch(() => state.value && state.value.question, () => {
 })
 
 const submitAnswer = (option: string) => {
-    if (answer.value) return;
+    if (answer.value || !state.value) return;
     answer.value = option;
-    // Uncomment this line when ready to test E2E
-    //axios.get(`https://counterp23.bcc.media/count/${state.value.question}/${option}`)
+    axios.get(`https://counterp23.bcc.media/count/${state.value.question}/${option}`)
 }
 </script>
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}</style>
