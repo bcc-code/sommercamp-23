@@ -10,12 +10,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import { initializeApp } from 'firebase/app'
 import { useRoute } from 'vue-router'
 import { useState } from '@/composables/state';
-import { useSettings } from '@/composables/settings';
 
 const route = useRoute()
 const isOverlay = computed(() => route.path.startsWith('/overlay'))
@@ -31,15 +30,21 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 
-const { gender } = useSettings()
-const { state, isFirstQuestion, hasQuestion } = useState(gender.value!)
-
+const { state, isFirstQuestion, hasQuestion } = useState()
 const backgroundImageName = computed(() => {
     if (!hasQuestion.value) return 'background'
     else if (isFirstQuestion.value) return 'background'
     return state.value!.question
 })
 
+const preloadImages = () => {
+    ['1b', '2b', '2g', '3g', '4g', '5b', '6g', '7b', 'option1', 'option2'].forEach((i) => {
+        var img = new Image()
+        img.src= '/img/' + i + '.webp'
+    })
+}
+
+onMounted(preloadImages)
 </script>
 <style>
 .transition-background-image {
