@@ -1,0 +1,63 @@
+name: Norvegiană
+language: Limbă
+menu:
+  home: Acasă
+gender: Gen
+genders:
+  boy: Băiat
+  girl: Fată
+questions:
+  0a:
+    text: Cine crezi ca are control asupra user-ului de TikTok?
+    options:
+      1: Martine
+      2: Sindre
+      3: Eskild
+      4: Silje
+      5: Trine
+      6: Jonas
+      7: Nina
+      8: Mathias
+      9: Pål
+      10: Siril
+  1b:
+    text: Ce va alege Sindre?
+    options:
+      1: Va accepta să-i fie ascuțite patinele
+      2: Îi va mulțumi lui Eskild pentru ofertă, dar nu o va accepta
+  2b:
+    text: Ce va spune Sindre?
+    options:
+      1: Va recunoaște că a fost puțin nemilos, dar va da vina pe faptul că a fost presat de Pål și de ceilalți.
+      2: Va recunoaște că mesajul de la Peter avea sens. Dar va avertiza să nu se folosească Cuvântul lui Dumnezeu pentru situații greșite.
+  2g:
+    text: Ce va spune Martine?
+    options:
+      1: Va spune că situația nu este despre a judeca. Nina provoacă neliniște în grupul de tineri și pune oamenii unul împotriva celuilalt. 
+      2: Va recunoaște că a fost sub presiune atunci când a fost provocată de Nina și că a judecat-o pe Nina.
+  3g:
+    text: Ce își va pune Martine pe felia de pâine?
+    options:
+      1: Bugatti
+      2: Nutella
+  4g:
+    text: Ce va face Martine?
+    options:
+      1: Nu-i pasă despre postarea cu ea și mai degrabă o ajută pe Nina să nu-i pese de utilizator.
+      2: O ajută pe Nina să afle cine se află în spatele utilizatorului pentru a-l face să se oprească.
+  5b:
+    text: Ce va face Sindre?
+    options:
+      1: Va urma sfatul de la ChatGPT pentru a alege între a se alătura grupului sau să se dueleze cu Eskild.
+      2: Se va ruga și va căuta o cale de ieșire ca să fie cel mai bine atât pentru Eskild, cât și pentru grup.
+  6g:
+    text: Ce va face Martine?
+    options:
+      1: Îi va explica lui Sarah învățătura Bisericii, astfel încât să înțeleagă cum Cuvântul lui Dumnezeu îi poate ajuta pe toți oamenii să devină fericiți.
+      2: O va respinge pe Sarah, întărind astfel percepția ei despre Biserica fiind o sectă în care au loc o mulțime de lucruri ciudate.
+  7b:
+    text: Ce va face Sindre?
+    options:
+      1: Va păstra liniștea în grup prin a evita să răspundă.
+      2: Va fi sincer cu Eskild, așa cum el și-ar fi dorit ca Eskild să fie cu el într-o situație asemănătoare.
+waiting: Așteptând următoarea întrebare...

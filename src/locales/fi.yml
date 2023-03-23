@@ -1,0 +1,63 @@
+name: Norja
+language: Kieli
+menu:
+  home: Koti
+gender: Sukupuoli
+genders:
+  boy: Poika
+  girl: Tyttö
+questions:
+  0a:
+    text: Arvaatko kuka ohjaa TikTok käyttäjää?
+    options:
+      1: Martine
+      2: Sindre
+      3: Eskild
+      4: Silje
+      5: Trine
+      6: Jonas
+      7: Nina
+      8: Mathias
+      9: Pål
+      10: Siril
+  1b:
+    text: Mitä Sindre tulee valitsemaan?
+    options:
+      1: Ottaa vastaan tarjouksen luistinten terottamisesta
+      2: Kiittää Eskildiä tarjouksesta mutta kieltäytyy siitä
+  2b:
+    text: Mitä Sindre tulee sanomaan?
+    options:
+      1: Tunnustaa olleensa vähän tyly mutta syyttää Pålin ja toisten painostaneen häntä.
+      2: Tunnustaa että Peterin viestissä oli perää. Varoittaa kuitenkin käyttämästä Jumalan sanaa väärissä yhteyksissä.
+  2g:
+    text: Mitä Martine tulee sanomaan?
+    options:
+      1: Sanoo ettei tässä ollut tuomitsemisesta kysymys. Nina aiheuttaa levottomuutta nuorten joukossa ja yllyttää ihmisiä toisiaan vastaan
+      2: Tunnustaa olleensa painostettu kun Nina haastoi häntä ja että nyt hän on tuominnut Ninan.
+  3g:
+    text: Mitä Martine laittaa leivän päälle?
+    options:
+      1: Nugattia
+      2: Nutellaa
+  4g:
+    text: Mitä Martine aikoo tehdä?
+    options:
+      1: Vähät välittää viestistä ja aikoo auttaa Ninaa olemaan välittämättä käyttäjästä.
+      2: Auttaa Ninaa selvittämään ketkä ovat käyttäjänimen takansa saadakseen heidät lopettamaan.
+  5b:
+    text: Mitä Sindra aikoo tehdä?
+    options:
+      1: 'Seurata ChatGPT: n neuvoa valita aikooko olla mukana porukassa vai selvittääkö välinsä Eskildin kanssa.'
+      2: Rukoilla ja etsiä ratkaisua joka olisi paras mahdollinen sekä Eskildille että porukalle.
+  6g:
+    text: Mitä Martine aikoo tehdä?
+    options:
+      1: Selittää seurakunnan oppia Sarahille jotta tämä ymmärtäisi Jumalan sanan voivan auttaa kaikkia ihmisiä tulemaan onnellisiksi.
+      2: Torjuu Sarahin ja sillä tavalla vahvistaa hänen käsitystään seurakunnasta lahkona jossa tapahtuu vaikka mitä outoa.
+  7b:
+    text: Mitä Sindre aikoo tehdä?
+    options:
+      1: Säilyttää sovun porukassa olemalla vastaamatta.
+      2: Olla rehellinen Eskildille niin kuin hän toivoisi Eskildin olevan hänelle vastaavassa tilanteessa.
+waiting: Odottaa seuraavaa kysymystä...

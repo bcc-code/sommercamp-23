@@ -1,0 +1,63 @@
+name: Norueguês
+language: Idioma
+menu:
+  home: Lar
+gender: Gênero
+genders:
+  boy: Menino
+  girl: Menina
+questions:
+  0a:
+    text: Quem você acha que controla os usuários do TikTok?
+    options:
+      1: Martine
+      2: Martine
+      3: Eskild
+      4: Silje
+      5: Trine
+      6: Jonas
+      7: Nina
+      8: Mathias
+      9: Pål
+      10: Siril
+  1b:
+    text: O que o Sindre vai escolher?
+    options:
+      1: Concorde em ter os patins afiados
+      2: Agradeça a Eskild pela oferta, mas, caso contrário, diga obrigado
+  2b:
+    text: O que o Sindre vai dizer?
+    options:
+      1: Admita que ele faltou com a mansidão, mas foi pelo fato dele ter sido pressionado pelo Pål e pelos outros.
+      2: Admita que a mensagem de Peter tinha uma razão. Mas dá um alerta para não usar a palavra de Deus para situações erradas.
+  2g:
+    text: O que a Martine vai dizer?
+    options:
+      1: Diga que a situação não se trata de julgamento. Nina causa agitação no grupo de jovens e coloca as pessoas umas contra as outras. 
+      2: Admita que ela ficou sob pressão quando foi desafiada por Nina e que a julgou.
+  3g:
+    text: O que a Martine vai colocar na fatia do pão?
+    options:
+      1: Nugatti
+      2: Nutella
+  4g:
+    text: O que a Martine vai fazer?
+    options:
+      1: Ignorar o post sobre ela e pelo contrário ajudar a Nina em não se importar sobre os usuários.
+      2: Ajude Nina a descobrir quem está por trás do usuário para fazê-lo parar.
+  5b:
+    text: O que o Sindre vai fazer?
+    options:
+      1: Siga o conselho do ChatGPT para escolher entre entrar na turma ou com Eskild.
+      2: Ore e procure uma saída que possa fazer o melhor possível tanto para Eskild quanto para a turma.
+  6g:
+    text: O que a Martine vai fazer?
+    options:
+      1: Explique os ensinamentos da igreja para Sarah, para que ela entenda como a palavra de Deus pode ajudar todas as pessoas a serem felizes.
+      2: Rejeite Sarah e, ​​assim, reforce a percepção dela sobre a igreja como uma seita onde coisas tremendas e estranhas acontecem.
+  7b:
+    text: O que o Sindre vai fazer?
+    options:
+      1: Mantenha o grupo calmo evitando responder.
+      2: Seja honesto com Eskild, pois ele gostaria que Eskild estivesse contra ele em uma situação semelhante.
+waiting: Aguardando a próxima pergunta...

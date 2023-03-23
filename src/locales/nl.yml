@@ -1,0 +1,63 @@
+name: Noors
+language: Taal
+menu:
+  home: Home
+gender: Geslacht
+genders:
+  boy: Jongen
+  girl: Meisje
+questions:
+  0a:
+    text: Wie beheert het TikTok account?
+    options:
+      1: Martine
+      2: Sindre
+      3: Eskild
+      4: Silje
+      5: Trine
+      6: Jonas
+      7: Nina
+      8: Mathias
+      9: Pål
+      10: Siril
+  1b:
+    text: Wat moet Sindre kiezen?
+    options:
+      1: Ja zeggen zodat zijn schaatsen geslepen worden
+      2: Eskild bedanken voor het aanbod, maar nee bedankt zeggen
+  2b:
+    text: Wat moet Sindre zeggen?
+    options:
+      1: Toegeven dat hij een beetje onbarmhartig was, maar dat het lag aan aan de groepsdruk van Pål en de anderen.
+      2: Toegeven dat Peter een punt heeft met zijn bericht. Maar een waarschuwing geven om Gods woord niet in de verkeerde situaties te gebruiken.
+  2g:
+    text: Wat moet Martine zeggen?
+    options:
+      1: Zeggen dat deze situatie niet gaat over oordelen. Nina zorgt voor onrust in de groep en zet mensen tegen elkaar op. 
+      2: Toegeven dat ze onder druk kwam toen ze werd uitgedaagd door Nina en dat ze Nina geoordeeld had.
+  3g:
+    text: Wat moet Martine op haar broodje doen?
+    options:
+      1: Nugatti
+      2: Nutella
+  4g:
+    text: Wat moet Martine doen?
+    options:
+      1: Het bericht over haar negeren en Nina helpen om zich niet druk te maken.
+      2: Nina helpen om uit te zoeken wie er achter het account zat om diegene te laten stoppen.
+  5b:
+    text: Wat moet Sindre doen?
+    options:
+      1: De raad van ChatGPT volgen en een keuze maken tussen met de groep meegaan of het goed maken met Eskild.
+      2: Bidden en zoeken naar een uitweg die het beste werkt voor zowel Eskild als de groep.
+  6g:
+    text: Wat moet Martine doen?
+    options:
+      1: De leer van de gemeente uitleggen aan Sarah, zodat ze begrijpt hoe Gods woord alle mensen kan helpen om gelukkig te worden.
+      2: Sarah afwijzen, en daarmee haar opvatting versterken over dat de gemeente een sekte is waar veel raars gebeurt.
+  7b:
+    text: Wat moet Sindre doen?
+    options:
+      1: De rust in de groep bewaren door niet te antwoorden.
+      2: Eerlijk zijn tegen Eskild, zoals hij wou dat Eskild zou doen in een soortgelijke situatie.
+waiting: Wachten op de volgende vraag...

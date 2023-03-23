@@ -1,0 +1,63 @@
+name: Norsk
+language: Språk
+menu:
+  home: Hjem
+gender: Kjønn
+genders:
+  boy: Gutt
+  girl: Jente
+questions:
+  0a:
+    text: Hvem tror du styrer TikTok brukeren?
+    options:
+      1: Martine
+      2: Sindre
+      3: Eskild
+      4: Silje
+      5: Trine
+      6: Jonas
+      7: Nina
+      8: Mathias
+      9: Pål
+      10: Siril
+  1b:
+    text: Hva skal Sindre velge?
+    options:
+      1: Takke ja til å få skøytene slipt
+      2: Takke Eskild for tilbudet, men si ellers takk
+  2b:
+    text: Hva skal Sindre si?
+    options:
+      1: Innrømme at han var litt ubarmhjertig, men skylde på at det var fordi han ble presset av Pål og de andre.
+      2: Innrømme at meldingen fra Peter hadde et poeng. Men gi en advarsel om å ikke bruke Guds ord til feil situasjoner.
+  2g:
+    text: Hva skal Martine si?
+    options:
+      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre. 
+      2: Innrømme at hun kom under trykk når hun ble utfordret av Nina, og at hun har dømt Nina.
+  3g:
+    text: Hva skal Martine ha på brødskiva?
+    options:
+      1: Nugatti
+      2: Nutella
+  4g:
+    text: Hva skal Martine gjøre?
+    options:
+      1: Blåse i posten om henne og heller hjelpe Nina med å ikke bry seg om brukeren.
+      2: Hjelpe Nina med å finne ut hvem som står bak brukeren for å få dem til å slutte.
+  5b:
+    text: Hva skal Sindre gjøre?
+    options:
+      1: Følge rådet fra ChatGPT om å ta et valg mellom å være med i gjengen, eller å gjøre opp med Eskild.
+      2: Be og lete etter en utvei som kan gjøre det best mulig både for Eskild og gjengen.
+  6g:
+    text: Hva skal Martine gjøre?
+    options:
+      1: Forklare menighetens lære til Sarah, så hun forstår hvordan Guds ord kan hjelpe alle mennesker til å bli lykkelige.
+      2: Avvise Sarah, og dermed forsterke hennes oppfatning av menigheten som en sekt der utrolig mye rart foregår.
+  7b:
+    text: Hva skal Sindre gjøre?
+    options:
+      1: Bevare roen i gjengen ved å unngå å svare.
+      2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
+waiting: Venter på neste spørsmål...

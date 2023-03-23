@@ -1,0 +1,63 @@
+name: Norveççe
+language: Dil
+menu:
+  home: Ev
+gender: Cinsiyet
+genders:
+  boy: Erkek
+  girl: Kız
+questions:
+  0a:
+    text: Sizce TikTok kullanıcısını kim kontrol ediyor?
+    options:
+      1: Martine
+      2: Sindre
+      3: Eskild
+      4: Silje
+      5: Trine
+      6: Jonas
+      7: Nina
+      8: Mathias
+      9: Pål
+      10: Siril
+  1b:
+    text: Sindre ne seçecek?
+    options:
+      1: Patenlerin keskinleştirilmesine müteşekkir olun
+      2: Teklif için Eskild'e teşekkür edin, aksi halde teşekkür edin
+  2b:
+    text: Sindre ne söyleyecek?
+    options:
+      1: Biraz acımasız olduğunu kabul et, ama suçu Pål ve diğerleri tarafından baskı altında tutulduğu gerçeğine bağla.
+      2: Peter'dan gelen mesajın haklı olduğunu kabul edin. Ama Allah'ın sözünü yanlış durumlar için kullanmamak konusunda uyarıda bulunun.
+  2g:
+    text: Martine ne söyleyecek?
+    options:
+      1: Durumun yargılamakla ilgili olmadığını söyleyin. Nina, gençlik grubunda huzursuzluğa neden olur ve insanları birbirine düşürür.
+      2: Nina tarafından meydan okunduğunda baskı altına girdiğini ve Nina'yı yargıladığını kabul edin.
+  3g:
+    text: Martine'nin ekmek diliminde ne olmalı?
+    options:
+      1: Nugatti
+      2: Nutella
+  4g:
+    text: Martine ne yapacak?
+    options:
+      1: Onunla ilgili postayı havaya uçurun ve bunun yerine Nina'nın kullanıcıyı umursamamasına yardımcı olun.
+      2: Onları durdurmak için Nina'nın kullanıcının arkasında kimin olduğunu bulmasına yardım edin.
+  5b:
+    text: Sindre ne yapacak?
+    options:
+      1: Çeteye katılmak veya Eskild ile anlaşmak arasında bir seçim yapmak için ChatGPT'nin tavsiyelerine uyun.
+      2: Dua edin ve hem Eskild hem de çete için mümkün olanın en iyisini yapabilecek bir çıkış yolu arayın.
+  6g:
+    text: Martine ne yapacak?
+    options:
+      1: Tanrı'nın sözünün tüm insanların mutlu olmasına nasıl yardım edebileceğini anlaması için kilisenin öğretilerini Sarah'ya açıklayın.
+      2: Sarah'yı reddedin, böylece onun kiliseyi inanılmaz miktarda tuhaf şeylerin meydana geldiği bir mezhep olarak algılamasını pekiştirin.
+  7b:
+    text: Sindre ne yapacak?
+    options:
+      1: Cevap vermekten kaçınarak grubu sakinleştirin.
+      2: Benzer bir durumda Eskild'in yanında olmasını isteyeceği için Eskild'e karşı dürüst olun.
+waiting: Bir sonra ki soruyu bekliyoruz...
