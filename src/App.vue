@@ -6,7 +6,7 @@
             :class="isAdmin ? 'bg-dark-mint' : 'md:max-w-md md:shadow-lg md:rounded-xl'">
             <RouterView />
         </div>
-    </div>  
+    </div>
 </template>
 
 <script setup lang="ts">

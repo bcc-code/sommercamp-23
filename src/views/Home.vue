@@ -1,6 +1,6 @@
 <template>
     <Settings v-if="!gender" @submit="settings = $event"/>
-    <Transition v-else-if="state" mode="out-in">
+    <Transition v-else mode="out-in">
         <template v-if="!hasQuestion">
             <h3 class="text-center px-16 uppercase font-bold text-3xl" >{{$t('waiting')}}</h3>
         </template>
@@ -8,7 +8,7 @@
         <div v-else class="text-center flex flex-col space-y-5 px-8 -mt-32">
             <h3 class="col-span-full mb-5 text-shadow px-13 uppercase font-bold text-3xl text-shadow-xl">{{ $t(getQuestionKey(state.question)) }}</h3>
             <button v-for="option in getOptions(state.question)" :key="'option-' + option"
-                @click="submitAnswer(option)" 
+                @click="submitAnswer(option)"
                 class="w-full h-24 font-normal py-1 px-6 bg-contain bg-transparent bg-no-repeat bg-center transition-opacity"
                 :class="{
                     'cursor-default': answer,

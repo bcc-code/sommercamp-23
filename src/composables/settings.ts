@@ -3,7 +3,7 @@ import { computed } from "vue"
 
 interface Settings {
     language?: string
-    gender?: string 
+    gender?: string
 }
 
 export const useSettings = () => {
