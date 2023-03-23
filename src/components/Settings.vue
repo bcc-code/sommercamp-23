@@ -14,12 +14,12 @@
                     <option v-for="g in genders" :key="g" :value="g">{{$t('genders.' + g) }}</option>
                 </select>
             </div>
-        </div>  
+        </div>
         <div class="w-full text-center">
             <button type="button" @click="emit('submit', { gender, locale })" class="bg-yellow text-taupe text-base font-semibold">{{$t('login') }}</button>
         </div>
     </div>
-    
+
 </template>
 <script setup lang="ts">
 import { ref} from 'vue'

@@ -11,7 +11,9 @@ export const useState = (forceGender?: string) => {
 
     const states = useFirestore(collection(db, 'states'), [])
 
-    const stateRef = computed(() => forceGender ? doc(db, 'states', forceGender) : gender.value && doc(db, 'states', gender.value))
+    const stateRefOld = computed(() => forceGender ? doc(db, 'states', forceGender) : gender.value && doc(db, 'states', gender.value))
+
+    const stateRef = computed(() => gender.value && doc(db, 'states', gender.value))
     const state = useFirestore(stateRef, null)
 
     const isFirstQuestion = computed(() => state.value && state.value.question == '0a')

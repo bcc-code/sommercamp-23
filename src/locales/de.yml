@@ -33,7 +33,7 @@ questions:
   2g:
     text: Was soll Martine sagen?
     options:
-      1: Sagen, dass die Situation nicht davon handelt, zu richten. Nina schafft Unruhe in der Jugendschar und bringt die Leute gegeneinander auf. 
+      1: Sagen, dass die Situation nicht davon handelt, zu richten. Nina schafft Unruhe in der Jugendschar und bringt die Leute gegeneinander auf.
       2: Einsehen, dass sie unter Druck geriet, als sie von Nina herausgefordert wurde und dass sie Nina gerichtet hat.
   3g:
     text: Was soll Martine auf ihrem Brot haben?
@@ -60,4 +60,4 @@ questions:
     options:
       1: Die Ruhe in der Gruppe bewahren, indem er es vermeidet, zu antworten.
       2: Eskild gegenüber ehrlich sein, sowie er es sich von Eskild in einer ähnlichen Situation gewünscht hätte.
-waiting: Warte auf die nächste Frage...
+waiting: Warte auf die nächste Frage

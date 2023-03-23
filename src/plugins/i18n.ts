@@ -5,7 +5,7 @@ import { useLocalStorage } from '@vueuse/core'
 const localPathPrefix = '../locales/'
 
 const storage = useLocalStorage('pc23-options', {}) as any
-const locale = storage.value?.apperance?.language || 'en'
+const locale = storage.value?.locale || 'en'
 
 const messages = Object.fromEntries(
   Object.entries(import.meta.globEager('../locales/*.y(a)?ml')).map(
