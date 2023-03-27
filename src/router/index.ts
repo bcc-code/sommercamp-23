@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'admin',
       component: () => import('../views/Admin.vue')
     },
+	{
+		path: '/results',
+		name: 'results',
+		component: () => import('../views/Results.vue')
+	},
     {
       path: '/overlay',
       name: 'overlay',
