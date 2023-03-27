@@ -52,6 +52,9 @@ const setSettings = (event) => {
 
 const submitAnswer = (option: string) => {
     if (answer.value || !state.value) return;
+	if (!confirm('Are you sure?')) {
+		return
+	}
     answer.value = option;
     axios.get(`https://counterp23.bcc.media/count/${state.value.question}/${option}`)
 }

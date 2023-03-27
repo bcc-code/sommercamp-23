@@ -36,11 +36,13 @@ const fetchData = async () => {
   dataLoaded.value = true;
 };
 
+
 onMounted(() => {
   fetchData();
   setInterval(() => {
     fetchData();
   }, 1000);
 });
+
 
 </script>
