@@ -1,5 +1,6 @@
-name: Norveščina
+name: Slovenščina
 language: Jezik
+thankyou: Hvala za tvoj odgovor
 menu:
   home: Domov
 gender: Spol
@@ -8,7 +9,7 @@ genders:
   girl: Punca
 questions:
   0a:
-    text: Kdo misliš, da vodi TikTok račun?
+    text: Kdo misliš, da upravlja TikTok račun?
     options:
       1: Martine
       2: Sindre
@@ -23,10 +24,10 @@ questions:
   1b:
     text: Kaj naj Sindre izbere?
     options:
-      1: Takke ja til å få skøytene slipt
-      2: Se bo zahvalil Eskildu za ponudbo, ampak rekel ne hvala.
+      1: Zahvali naj se, da bo vzel njegove drsalke.
+      2: Zahvali naj se Eskildu za ponudbo, ampak reče ne hvala.
   2b:
-    text: Kaj bo rekel Sindre?
+    text: Kaj naj reče Sindre?
     options:
       1: Prizna, da je bil malo neusmiljen, ampak krivdo zvali na to, da so Pål in ostali pritiskali nanj.
       2: Prizna, da je imelo Petrovo sporočilo smisel. Ampak opozori, da se Božja beseda ne uporablja v napačnih situacijah.
@@ -39,21 +40,21 @@ questions:
     text: Kaj naj Martine namaže na kruh?
     options:
       1: Nugatti
-      2: Nutella
+      2: Nutello
   4g:
     text: Kaj naj Martine naredi?
     options:
-      1: Blåse i posten om henne og heller hjelpe Nina med å ikke bry seg om brukeren.
-      2: Pomaga Nini, da najde, kdo upravlja račun in ga ustavi.
+      1: Ignorira objavo in raje pomaga Nini, da se ne ukvarja s profilom.
+      2: Pomaga Nini poiskati, kdo upravlja račun in ga ustavi.
   5b:
     text: Kaj naj Sindre naredi?
     options:
-      1: Naj sledi nasvetu ChatGPT, da se odloči med tem, da je del skupine ali uredi stvari z Eskildom.
+      1: Naj sledi nasvetu ChatGPT, da se odloči med tem, ali je del skupine ali uredi stvari z Eskildom.
       2: Prosi in išče pot ven, ki bi bila najboljša tako za Eskilda kot za skupino.
   6g:
     text: Kaj naj Martine naredi?
     options:
-      1: Razloži cerkveni nauk Sarah, da lahko razume, kako Božja beseda lahko pomaga vsem, da postanejo srečni.
+      1: Razloži cerkveni nauk Sarah, da razume, kako Božja beseda lahko pomaga vsem, da postanejo srečni.
       2: Zavrne Sarah in s tem okrepi njeno prepričanje, da je cerkev sekta, kjer se dogaja veliko čudnega.
   7b:
     text: Kaj naj Sindre naredi?

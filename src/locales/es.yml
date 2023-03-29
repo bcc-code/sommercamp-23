@@ -1,19 +1,20 @@
-name: Norsk
-language: Språk
+name: Español
+language: Idiomas
+thankyou: Takk for ditt svar
 menu:
-  home: Hjem
-gender: Kjønn
+  home: Inicio
+gender: Género
 genders:
-  boy: Gutt
-  girl: Jente
+  boy: Chico
+  girl: Chica
 questions:
   0a:
-    text: Hvem tror du styrer TikTok brukeren?
+    text: '¿Quién crees que controla al usuario de TikTok?'
     options:
       1: Martine
       2: Sindre
       3: Eskild
-      4: Silje
+      4: Celia
       5: Trine
       6: Jonas
       7: Nina
@@ -21,43 +22,43 @@ questions:
       9: Pål
       10: Siril
   1b:
-    text: Hva skal Sindre velge?
+    text: '¿Cómo se siente Sindre?'
     options:
-      1: Takke ja til å få skøytene slipt
-      2: Takke Eskild for tilbudet, men si ellers takk
+      1: Aceptar que se afilen los patines
+      2: Agradecer a Eskild la propuesta, pero rechazarla
   2b:
-    text: Hva skal Sindre si?
+    text: '¿Qué debería decir Sindre?'
     options:
-      1: Innrømme at han var litt ubarmhjertig, men skylde på at det var fordi han ble presset av Pål og de andre.
-      2: Innrømme at meldingen fra Peter hadde et poeng. Men gi en advarsel om å ikke bruke Guds ord til feil situasjoner.
+      1: Admitir que no fue muy misericordioso, pero échale la culpa a la presión de Pål y los demás.
+      2: Admitir que el mensaje de Pedro tenía sentido. Pero dar una advertencia de no usar la palabra de Dios para situaciones equivocadas.
   2g:
-    text: Hva skal Martine si?
+    text: '¿Qué debería decir Martine?'
     options:
-      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre. 
-      2: Innrømme at hun kom under trykk når hun ble utfordret av Nina, og at hun har dømt Nina.
+      1: Di que no se trata de juzgar a nadie. Nina está causando malestar en el grupo de jóvenes y pone a unos contra otros
+      2: Admite que se sintió presionada cuando fue retada por Nina y que la juzgó.
   3g:
-    text: Hva skal Martine ha på brødskiva?
+    text: '¿Qué debería poner Martine en su bocadillo?'
     options:
       1: Nugatti
       2: Nutella
   4g:
-    text: Hva skal Martine gjøre?
+    text: '¿Qué debe hacer Martine?'
     options:
-      1: Blåse i posten om henne og heller hjelpe Nina med å ikke bry seg om brukeren.
-      2: Hjelpe Nina med å finne ut hvem som står bak brukeren for å få dem til å slutte.
+      1: Ignora el mensaje sobre ella y ayuda a Nina a no preocuparse.
+      2: Ayuda a Nina a descubrir quién está detrás del perfil para conseguir que se detenga.
   5b:
-    text: Hva skal Sindre gjøre?
+    text: '¿Qué debe hacer Sindre?'
     options:
-      1: Følge rådet fra ChatGPT om å ta et valg mellom å være med i gjengen, eller å gjøre opp med Eskild.
-      2: Be og lete etter en utvei som kan gjøre det best mulig både for Eskild og gjengen.
+      1: 'Sigue el consejo de ChatGPT: elige entre unirte a la banda o reconciliarte con Eskild.'
+      2: Orar y busca una solución que sea la mejor tanto para Eskild como para la banda.
   6g:
-    text: Hva skal Martine gjøre?
+    text: '¿Qué debe hacer Martine?'
     options:
-      1: Forklare menighetens lære til Sarah, så hun forstår hvordan Guds ord kan hjelpe alle mennesker til å bli lykkelige.
-      2: Avvise Sarah, og dermed forsterke hennes oppfatning av menigheten som en sekt der utrolig mye rart foregår.
+      1: Explica la doctrina a Sarah para que entienda cómo la palabra de Dios puede ayudar a todos a ser felices.
+      2: Rechaza a Sarah, reforzando su opinión de que la iglesia es una secta en la que ocurren cosas extrañas.
   7b:
-    text: Hva skal Sindre gjøre?
+    text: '¿Qué debe hacer Sindre?'
     options:
-      1: Bevare roen i gjengen ved å unngå å svare.
-      2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Venter på neste spørsmål...
+      1: Mantener la calma del grupo evitando responder.
+      2: Sé honesto con Eskild. Como a él hubiera querido que Eskild fuera en una situación similar.
+waiting: Esperando la siguiente pregunta...

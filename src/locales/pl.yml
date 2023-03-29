@@ -1,5 +1,6 @@
-name: Norweski
+name: Polski
 language: Język
+thankyou: Dziękujemy za odpowiedź
 menu:
   home: Strona główna
 gender: Płeć
@@ -29,29 +30,29 @@ questions:
     text: Co ma powiedzieć Sindre?
     options:
       1: Przyznać, że był trochę niemiłosierny, ale zwalić to na to, że był pod presją Påla i innych.
-      2: Innrømme at meldingen fra Peter hadde et poeng. Men gi en advarsel om å ikke bruke Guds ord til feil situasjoner.
+      2: Przyznać, że wiadomość Piotra miała sens, ale ostrzec, że nie powinno się stosować Słowa Bożego do niewłaściwych sytuacji.
   2g:
-    text: Hva skal Martine si?
+    text: Co ma powiedzieć Martine?
     options:
-      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre. 
-      2: Innrømme at hun kom under trykk når hun ble utfordret av Nina, og at hun har dømt Nina.
+      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre.
+      2: Przyznać, że znalazła się pod presją, kiedy Nina się z nią nie zgodziła i przyznać, że ją osądziła.
   3g:
-    text: Hva skal Martine ha på brødskiva?
+    text: Czym Martine powinna posmarować kanapkę?
     options:
       1: Nugatti
       2: Nutella
   4g:
-    text: Hva skal Martine gjøre?
+    text: Co ma zrobić Martine?
     options:
-      1: Blåse i posten om henne og heller hjelpe Nina med å ikke bry seg om brukeren.
-      2: Hjelpe Nina med å finne ut hvem som står bak brukeren for å få dem til å slutte.
+      1: Zignorować filmik o sobie i zamiast tego pomóc Ninie nie przejmować się tym, kto prowadzi profil.
+      2: Pomóc Ninie dowiedzieć się, kto prowadzi profil, żeby namówić tę osobę, żeby przestała.
   5b:
-    text: Hva skal Sindre gjøre?
+    text: Co ma zrobić Sindre?
     options:
-      1: Følge rådet fra ChatGPT om å ta et valg mellom å være med i gjengen, eller å gjøre opp med Eskild.
-      2: Be og lete etter en utvei som kan gjøre det best mulig både for Eskild og gjengen.
+      1: Pokierować się radą Chatu GPT, żeby wybrać pomiędzy dołączeniem do kolegów, a pogodzeniem się z Eskildem.
+      2: Modlić się i znaleźć wyjście, które będzie najlepsze zarówno dla Eskilda, jak i reszty grupy.
   6g:
-    text: Hva skal Martine gjøre?
+    text: Co ma zrobić Martine?
     options:
       1: Forklare menighetens lære til Sarah, så hun forstår hvordan Guds ord kan hjelpe alle mennesker til å bli lykkelige.
       2: Avvise Sarah, og dermed forsterke hennes oppfatning av menigheten som en sekt der utrolig mye rart foregår.
@@ -60,4 +61,4 @@ questions:
     options:
       1: Bevare roen i gjengen ved å unngå å svare.
       2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Venter på neste spørsmål...
+waiting: Venter på neste spørsmål

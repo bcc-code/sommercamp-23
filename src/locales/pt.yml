@@ -1,5 +1,6 @@
-name: Norueguês
+name: Português
 language: Idioma
+thankyou: Takk for ditt svar
 menu:
   home: Lar
 gender: Gênero
@@ -11,7 +12,7 @@ questions:
     text: Quem você acha que controla os usuários do TikTok?
     options:
       1: Martine
-      2: Martine
+      2: Sindre
       3: Eskild
       4: Silje
       5: Trine
@@ -21,12 +22,12 @@ questions:
       9: Pål
       10: Siril
   1b:
-    text: O que o Sindre vai escolher?
+    text: O que  Sindre vai escolher?
     options:
-      1: Concorde em ter os patins afiados
-      2: Agradeça a Eskild pela oferta, mas, caso contrário, diga obrigado
+      1: Concorde em ter os skates afiados
+      2: Agradeça a Eskild pela oferta, mas, diga obrigado
   2b:
-    text: O que o Sindre vai dizer?
+    text: O que  Sindre vai dizer?
     options:
       1: Admita que ele faltou com a mansidão, mas foi pelo fato dele ter sido pressionado pelo Pål e pelos outros.
       2: Admita que a mensagem de Peter tinha uma razão. Mas dá um alerta para não usar a palavra de Deus para situações erradas.
@@ -44,20 +45,20 @@ questions:
     text: O que a Martine vai fazer?
     options:
       1: Ignorar o post sobre ela e pelo contrário ajudar a Nina em não se importar sobre os usuários.
-      2: Ajude Nina a descobrir quem está por trás do usuário para fazê-lo parar.
+      2: Ajude Nina a descobrir quem está por trás do usuário para fazê-la parar.
   5b:
     text: O que o Sindre vai fazer?
     options:
-      1: Siga o conselho do ChatGPT para escolher entre entrar na turma ou com Eskild.
-      2: Ore e procure uma saída que possa fazer o melhor possível tanto para Eskild quanto para a turma.
+      1: Seguir o conselho do ChatGPT para escolher entre entrar na turma ou com Eskild.
+      2: Orar e procurar uma saída que possa fazer o melhor possível tanto para Eskild quanto para a turma.
   6g:
     text: O que a Martine vai fazer?
     options:
-      1: Explique os ensinamentos da igreja para Sarah, para que ela entenda como a palavra de Deus pode ajudar todas as pessoas a serem felizes.
-      2: Rejeite Sarah e, ​​assim, reforce a percepção dela sobre a igreja como uma seita onde coisas tremendas e estranhas acontecem.
+      1: Explicar os ensinamentos da igreja para Sarah, para que ela entenda como a palavra de Deus pode ajudar todas as pessoas a serem felizes.
+      2: Rejeitar Sarah e, ​​assim, reforçar a percepção dela sobre a igreja como uma seita onde coisas tremendas e estranhas acontecem.
   7b:
     text: O que o Sindre vai fazer?
     options:
       1: Mantenha o grupo calmo evitando responder.
-      2: Seja honesto com Eskild, pois ele gostaria que Eskild estivesse contra ele em uma situação semelhante.
+      2: Seja honesto com Eskild, assim como ele gostaria que Eskild estivesse com ele em uma situação semelhante.
 waiting: Aguardando a próxima pergunta...

@@ -1,5 +1,6 @@
-name: Norvégien
+name: Française
 language: Langue
+thankyou: Takk for ditt svar
 menu:
   home: Accueil
 gender: Sexe
@@ -13,7 +14,7 @@ questions:
       1: Martine
       2: Sindre
       3: Eskild
-      4: Silje
+      4: Célia
       5: Trine
       6: Jonas
       7: Nina

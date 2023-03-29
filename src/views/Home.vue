@@ -22,6 +22,9 @@
 					'border': `5px ` + ( option == 1 ? '#546e5a' : '#af9152' ) + ` solid`,
 					'border-radius': ( option == 1 ? '50px 0px 0px 50px' : '0px 50px 50px 0px' ),
 				}">{{ $t(getOption(state.question,option)) }}</button>
+    <Transition mode="out-in" >
+					<h3  v-if="answer" class="text-center px-16 uppercase font-bold text-2xl" style="padding-top: 30px" >{{$t('thankyou')}}</h3>
+			</transition>
         </div>
     </Transition>
 </template>
@@ -68,4 +71,17 @@ const submitAnswer = (option: string) => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-}</style>
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
+</style>

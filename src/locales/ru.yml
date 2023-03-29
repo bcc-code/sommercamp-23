@@ -1,63 +1,64 @@
-name: Norsk
-language: Språk
+name: Норвежский
+language: Язык
+thankyou: Takk for ditt svar
 menu:
-  home: Hjem
-gender: Kjønn
+  home: Главная
+gender: Пол
 genders:
-  boy: Gutt
-  girl: Jente
+  boy: Мальчик
+  girl: Девочка
 questions:
   0a:
-    text: Hvem tror du styrer TikTok brukeren?
+    text: Как ты думаешь, кто управляет аккуантом TikTok?
     options:
-      1: Martine
-      2: Sindre
-      3: Eskild
-      4: Silje
-      5: Trine
-      6: Jonas
-      7: Nina
-      8: Mathias
-      9: Pål
-      10: Siril
+      1: Мартина
+      2: Синдре
+      3: Эскиль
+      4: Силье
+      5: Трине
+      6: Йонас
+      7: Нина
+      8: Матиас
+      9: Пол
+      10: Сириль
   1b:
-    text: Hva skal Sindre velge?
+    text: Что выбрать Синдре?
     options:
-      1: Takke ja til å få skøytene slipt
-      2: Takke Eskild for tilbudet, men si ellers takk
+      1: Согласиться на заточку коньков
+      2: Поблагодарить Эскиля за предложение, но отказаться
   2b:
-    text: Hva skal Sindre si?
+    text: Что сказать Синдре?
     options:
-      1: Innrømme at han var litt ubarmhjertig, men skylde på at det var fordi han ble presset av Pål og de andre.
-      2: Innrømme at meldingen fra Peter hadde et poeng. Men gi en advarsel om å ikke bruke Guds ord til feil situasjoner.
+      1: Признаться, что он был немного безжалостным, но обвинить Пола и остальных, что это было сделано под их давлением.
+      2: Признаться, что в сообщение Петра есть смысл. Но дать предупреждение не применять Божье слово в неправильных ситуациях.
   2g:
-    text: Hva skal Martine si?
+    text: Что сказать Мартине?
     options:
-      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre. 
-      2: Innrømme at hun kom under trykk når hun ble utfordret av Nina, og at hun har dømt Nina.
+      1: Сказать, что ситуация не связана с осуждением. Нина создает переполох среди молодых и натравливает людей друг против друга
+      2: Признать, что на нее оказывалось давление, когда Нина бросала ей вызов, и что она осуждала Нину.
   3g:
-    text: Hva skal Martine ha på brødskiva?
+    text: С чем Мартине сделать бутерброд?
     options:
-      1: Nugatti
-      2: Nutella
+      1: С нугатти
+      2: С нутеллой
   4g:
-    text: Hva skal Martine gjøre?
+    text: Что сделать Мартине?
     options:
-      1: Blåse i posten om henne og heller hjelpe Nina med å ikke bry seg om brukeren.
-      2: Hjelpe Nina med å finne ut hvem som står bak brukeren for å få dem til å slutte.
+      1: Проигнорировать пост о себе и помочь Нине не думать о том, кто стоит за аккаунтом.
+      2: Помочь Нине выяснить, кто стоит за этим аккаунтом, чтобы заставить его остановиться.
   5b:
-    text: Hva skal Sindre gjøre?
+    text: Что сделать Синдре?
     options:
-      1: Følge rådet fra ChatGPT om å ta et valg mellom å være med i gjengen, eller å gjøre opp med Eskild.
-      2: Be og lete etter en utvei som kan gjøre det best mulig både for Eskild og gjengen.
+      1: 'Последовать совету ChatGPT сделать выбор: и либо присоединиться к компании, либо договориться с Эскилем.'
+      2: Молиться и искать выход, который мог бы стать наилучшим как для Эскиля, так и для компании.
   6g:
-    text: Hva skal Martine gjøre?
+    text: Что сделать Мартине?
     options:
-      1: Forklare menighetens lære til Sarah, så hun forstår hvordan Guds ord kan hjelpe alle mennesker til å bli lykkelige.
-      2: Avvise Sarah, og dermed forsterke hennes oppfatning av menigheten som en sekt der utrolig mye rart foregår.
+      1: Объяснить Саре учение церкви, чтобы она поняла, как Божье Слово может помочь всем людям быть счастливыми.
+      2: Отвергнуть Сару, тем самым укрепив ее представление о церкви как о секте, в которой творится много странного.
   7b:
-    text: Hva skal Sindre gjøre?
+    text: Что сделать Синдре?
     options:
-      1: Bevare roen i gjengen ved å unngå å svare.
-      2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Venter på neste spørsmål...
+      1: Сохранять спокойствие в компании, избегая ответов.
+      2: Быть честным с Эскилем, так как он хотел бы, чтобы Эскиль был честным с ним в подобной ситуации.
+waiting: Ожидание следующего вопроса...

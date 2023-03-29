@@ -1,14 +1,15 @@
-name: Norsk
-language: Språk
+name: Magyar
+language: Nyelv
+thankyou: Takk for ditt svar
 menu:
-  home: Hjem
-gender: Kjønn
+  home: Főoldal
+gender: Nem
 genders:
-  boy: Gutt
-  girl: Jente
+  boy: Fiú
+  girl: Lány
 questions:
   0a:
-    text: Hvem tror du styrer TikTok brukeren?
+    text: Szerinted ki irányítja a TikTok felhasználót?
     options:
       1: Martine
       2: Sindre
@@ -21,43 +22,43 @@ questions:
       9: Pål
       10: Siril
   1b:
-    text: Hva skal Sindre velge?
+    text: Mit válasszon Sindre?
     options:
-      1: Takke ja til å få skøytene slipt
-      2: Takke Eskild for tilbudet, men si ellers takk
+      1: Egyezzen bele a korcsolya élezésébe
+      2: Eskildnek ajánlatát köszönettel utasítsa vissza
   2b:
-    text: Hva skal Sindre si?
+    text: Mit mondjon Sindre?
     options:
-      1: Innrømme at han var litt ubarmhjertig, men skylde på at det var fordi han ble presset av Pål og de andre.
-      2: Innrømme at meldingen fra Peter hadde et poeng. Men gi en advarsel om å ikke bruke Guds ord til feil situasjoner.
+      1: Elismeri, hogy egy kicsit irgalmatlan volt, de arra fogja, hogy Pål és a többiek nyomást gyakoroltak rá.
+      2: Ismerje el, hogy Péter üzenetének volt alapja. De figyelmeztessen, hogy ne alkalmazzuk Isten szavát rossz helyzetekre.
   2g:
-    text: Hva skal Martine si?
+    text: Mit mondjon Martine?
     options:
-      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre. 
-      2: Innrømme at hun kom under trykk når hun ble utfordret av Nina, og at hun har dømt Nina.
+      1: Mondja el nekik, hogy ez a helyzet nem az ítélkezésről szól. Nina nyugtalanságot okoz az ifjúsági csoportban, és egymás ellen uszítja az embereket. 
+      2: Ismerje el, hogy nyomás alá került, amikor Nina kihívta, és hogy ítélte Ninát.
   3g:
-    text: Hva skal Martine ha på brødskiva?
+    text: Mit tegyen Martine a kenyérére?
     options:
       1: Nugatti
       2: Nutella
   4g:
-    text: Hva skal Martine gjøre?
+    text: Mit tegyen Martine?
     options:
-      1: Blåse i posten om henne og heller hjelpe Nina med å ikke bry seg om brukeren.
-      2: Hjelpe Nina med å finne ut hvem som står bak brukeren for å få dem til å slutte.
+      1: Ne törődjön a róla szóló hozzászólással, és inkább segítsen Ninának, hogy ne törődjön a felhasználóval.
+      2: Segítsen Ninának kideríteni, ki áll a felhasználó mögött, hogy leállítsa.
   5b:
-    text: Hva skal Sindre gjøre?
+    text: Mit tegyen Sindre?
     options:
-      1: Følge rådet fra ChatGPT om å ta et valg mellom å være med i gjengen, eller å gjøre opp med Eskild.
-      2: Be og lete etter en utvei som kan gjøre det best mulig både for Eskild og gjengen.
+      1: Kövesse ChatGPT tanácsát, hogy válasszon a bandához való csatlakozás vagy az Eskilddel való elszámolás között.
+      2: Imádkozzon, és keressen olyan kiutat, amely Eskild és a banda számára is a lehető legjobbat hozhatja.
   6g:
-    text: Hva skal Martine gjøre?
+    text: Mit tegyen Martine?
     options:
-      1: Forklare menighetens lære til Sarah, så hun forstår hvordan Guds ord kan hjelpe alle mennesker til å bli lykkelige.
-      2: Avvise Sarah, og dermed forsterke hennes oppfatning av menigheten som en sekt der utrolig mye rart foregår.
+      1: Magyarázza el Sarah-nak a közösség tanítását, hogy megértse, hogyan segíthet Isten Igéje minden embernek abban, hogy boldog legyen.
+      2: Utasítsa el Sarah-t, ezzel megerősítve a gyülekezetről alkotott képét, mint egy szektáról, ahol hihetetlenül sok furcsaság történik.
   7b:
-    text: Hva skal Sindre gjøre?
+    text: Mit tegyen Sindre?
     options:
-      1: Bevare roen i gjengen ved å unngå å svare.
-      2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Venter på neste spørsmål...
+      1: Tartsa fenn a nyugalmat a csoportban azáltal, hogy kerüli a válaszadást.
+      2: Legyen őszinte Eskilddel, hiszen ő is azt szeretné, ha Eskild őszinte lenne vele egy hasonló helyzetben.
+waiting: Várakozás a következő kérdésre...

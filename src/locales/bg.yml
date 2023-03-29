@@ -1,5 +1,6 @@
-name: Norsk
+name: Български
 language: Språk
+thankyou: Takk for ditt svar
 menu:
   home: Hjem
 gender: Kjønn
@@ -33,7 +34,7 @@ questions:
   2g:
     text: Hva skal Martine si?
     options:
-      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre. 
+      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre.
       2: Innrømme at hun kom under trykk når hun ble utfordret av Nina, og at hun har dømt Nina.
   3g:
     text: Hva skal Martine ha på brødskiva?
@@ -60,4 +61,4 @@ questions:
     options:
       1: Bevare roen i gjengen ved å unngå å svare.
       2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Venter på neste spørsmål...
+waiting: Venter på neste spørsmål
