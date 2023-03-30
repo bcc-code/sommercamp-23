@@ -34,7 +34,7 @@ questions:
   2g:
     text: Que doit dire Martine ?
     options:
-      1: Dire qu'il ne s'agit pas de juger. Nina sème le trouble dans le groupe de jeunes et monte les gens les uns contre les autres. 
+      1: Dire qu'il ne s'agit pas de juger. Nina sème le trouble dans le groupe de jeunes et monte les gens les uns contre les autres.
       2: Admettre qu'elle a été mise sous pression par Nina et qu'elle l'a jugée.
   3g:
     text: Que doit mettre Martine sur sa tartine ?
@@ -61,4 +61,9 @@ questions:
     options:
       1: Maintenir la paix dans la bande en évitant de répondre.
       2: Être honnête avec Eskild, comme il aurait souhaité qu'Eskild soit avec lui dans une situation similaire.
+  9a:
+    text: How many hours per day do you spend on social media?
+    options:
+      1: X
+      2: Y
 waiting: En attente de la prochaine question...

@@ -61,4 +61,9 @@ questions:
     options:
       1: Bevare roen i gruppen ved at undgå at svare
       2: Være ærlig mod Eskild, som han havde ønsket at Eskild var mod ham i en tilsvarende situation
+  9a:
+    text: How many hours per day do you spend on social media?
+    options:
+      1: X
+      2: Y
 waiting: Venter på næste spørgsmål...

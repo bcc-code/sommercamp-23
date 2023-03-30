@@ -61,4 +61,9 @@ questions:
     options:
       1: Ohrani mir v skupini, tako da ne odgovori.
       2: Je iskren do Eskilda, tako kot si želi, da bi bil Eskild iskren do njega v podobni situaciji.
+  9a:
+    text: How many hours per day do you spend on social media?
+    options:
+      1: X
+      2: Y
 waiting: Čakam na naslednje vprašanje ...

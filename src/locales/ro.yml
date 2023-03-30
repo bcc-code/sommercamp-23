@@ -34,7 +34,7 @@ questions:
   2g:
     text: Ce va spune Martine?
     options:
-      1: Va spune că situația nu este despre a judeca. Nina provoacă neliniște în grupul de tineri și pune oamenii unul împotriva celuilalt. 
+      1: Va spune că situația nu este despre a judeca. Nina provoacă neliniște în grupul de tineri și pune oamenii unul împotriva celuilalt.
       2: Va recunoaște că a fost sub presiune atunci când a fost provocată de Nina și că a judecat-o pe Nina.
   3g:
     text: Ce își va pune Martine pe felia de pâine?
@@ -61,4 +61,9 @@ questions:
     options:
       1: Va păstra liniștea în grup prin a evita să răspundă.
       2: Va fi sincer cu Eskild, așa cum el și-ar fi dorit ca Eskild să fie cu el într-o situație asemănătoare.
+  9a:
+    text: How many hours per day do you spend on social media?
+    options:
+      1: X
+      2: Y
 waiting: Așteptând următoarea întrebare...

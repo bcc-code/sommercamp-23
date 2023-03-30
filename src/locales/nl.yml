@@ -34,7 +34,7 @@ questions:
   2g:
     text: Wat gaat Martine zeggen?
     options:
-      1: Zeggen dat deze situatie niet gaat over oordelen. Nina zorgt voor onrust in de groep en zet mensen tegen elkaar op. 
+      1: Zeggen dat deze situatie niet gaat over oordelen. Nina zorgt voor onrust in de groep en zet mensen tegen elkaar op.
       2: Toegeven dat ze onder druk kwam toen ze werd uitgedaagd door Nina en dat ze Nina geoordeeld had.
   3g:
     text: Wat gaat Martine op haar broodje doen?
@@ -61,4 +61,9 @@ questions:
     options:
       1: De rust in de groep bewaren door niet te antwoorden.
       2: Eerlijk zijn tegen Eskild, zoals hij wou dat Eskild zou doen in een soortgelijke situatie.
+  9a:
+    text: How many hours per day do you spend on social media?
+    options:
+      1: X
+      2: Y
 waiting: Wachten op de volgende vraag...

@@ -34,7 +34,7 @@ questions:
   2g:
     text: Was soll Martine sagen?
     options:
-      1: Sagen, dass die Situation nicht davon handelt, zu richten. Nina schafft Unruhe in der Jugendgruppe und bringt sie gegeneinander auf. 
+      1: Sagen, dass die Situation nicht davon handelt, zu richten. Nina schafft Unruhe in der Jugendgruppe und bringt sie gegeneinander auf.
       2: Zugeben, dass sie unter Druck geriet, als sie von Nina herausgefordert wurde und dass sie Nina gerichtet hat.
   3g:
     text: Was soll Martine auf ihr Brot schmieren?
@@ -61,4 +61,9 @@ questions:
     options:
       1: Die Ruhe in der Gruppe bewahren, indem er es vermeidet, zu antworten.
       2: Eskild gegenüber ehrlich sein, sowie er es sich von Eskild in einer ähnlichen Situation gewünscht hätte.
+  9a:
+    text: Wie viele Stunden am Tag verbringst du auf sozialen Medien
+    options:
+      1: X
+      2: Y
 waiting: Auf die nächste Frage warten...

@@ -34,7 +34,7 @@ questions:
   2g:
     text: Mit mondjon Martine?
     options:
-      1: Mondja el nekik, hogy ez a helyzet nem az ítélkezésről szól. Nina nyugtalanságot okoz az ifjúsági csoportban, és egymás ellen uszítja az embereket. 
+      1: Mondja el nekik, hogy ez a helyzet nem az ítélkezésről szól. Nina nyugtalanságot okoz az ifjúsági csoportban, és egymás ellen uszítja az embereket.
       2: Ismerje el, hogy nyomás alá került, amikor Nina kihívta, és hogy ítélte Ninát.
   3g:
     text: Mit tegyen Martine a kenyérére?
@@ -61,4 +61,9 @@ questions:
     options:
       1: Tartsa fenn a nyugalmat a csoportban azáltal, hogy kerüli a válaszadást.
       2: Legyen őszinte Eskilddel, hiszen ő is azt szeretné, ha Eskild őszinte lenne vele egy hasonló helyzetben.
+  9a:
+    text: How many hours per day do you spend on social media?
+    options:
+      1: X
+      2: Y
 waiting: Várakozás a következő kérdésre...
