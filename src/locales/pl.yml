@@ -34,7 +34,7 @@ questions:
   2g:
     text: Co ma powiedzieć Martine?
     options:
-      1: Si at situasjonen ikke handler om å dømme. Nina skaper uro i ungdomsflokken og setter folk opp mot hverandre.
+      1: Powiedzieć, że w tej sytuacji nie chodzi o osądzanie. Nina wywołuje niepokój w grupie młodzieży i nastawia ludzi przeciwko sobie.
       2: Przyznać, że znalazła się pod presją, kiedy Nina się z nią nie zgodziła i przyznać, że ją osądziła.
   3g:
     text: Czym Martine powinna posmarować kanapkę?
@@ -54,11 +54,11 @@ questions:
   6g:
     text: Co ma zrobić Martine?
     options:
-      1: Forklare menighetens lære til Sarah, så hun forstår hvordan Guds ord kan hjelpe alle mennesker til å bli lykkelige.
-      2: Avvise Sarah, og dermed forsterke hennes oppfatning av menigheten som en sekt der utrolig mye rart foregår.
+      1: Wyjaśnić Sarze naukę zboru, żeby zrozumiała, jak Słowo Boże może pomóc wszystkim ludziom być szczęśliwymi.
+      2: Zaprzestać dalszej rozmowy z Sarą, wzmacniając tym samym jej postrzeganie zboru jako sekty, w której dzieje się bardzo dużo dziwnych rzeczy.
   7b:
-    text: Hva skal Sindre gjøre?
+    text: Co ma zrobić Sindre?
     options:
-      1: Bevare roen i gjengen ved å unngå å svare.
-      2: Være ærlig mot Eskild, slik han hadde ønsket at Eskild var mot ham i en tilsvarende situasjon.
-waiting: Venter på neste spørsmål
+      1: Zachować spokój w grupie, unikając odpowiedzi.
+      2: Być szczery z Eskildem, tak jak chciałby, aby Eskild był względem niego w podobnej sytuacji.
+waiting: Czekam na kolejne pytanie...

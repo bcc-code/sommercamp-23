@@ -5,6 +5,7 @@
             <h3 class="text-center px-16 uppercase font-bold text-3xl" >{{$t('waiting')}}</h3>
         </template>
         <FirstQuestion v-else-if="isFirstQuestion" @submit="submitAnswer" :answer="answer"/>
+        <LastQuestion v-else-if="isLastQuestion"/>
         <div v-else class="text-center flex flex-col space-y-5 px-8 -mt-32">
             <h3 class="col-span-full mb-5 text-shadow px-13 uppercase font-bold text-3xl text-shadow-xl">{{ $t(getQuestionKey(state.question)) }}</h3>
             <button v-for="option in getOptions(state.question)" :key="'option-' + option"
@@ -31,6 +32,7 @@
 
 <script setup lang="ts">
 import FirstQuestion from '@/components/FirstQuestion.vue';
+import LastQuestion from '@/components/LastQuestion.vue';
 import { useOptions } from '@/composables/options';
 import axios from 'axios'
 import { ref, watch } from 'vue'
@@ -39,7 +41,7 @@ import { useState } from '@/composables/state';
 import { useSettings } from '@/composables/settings';
 
 const { settings, gender } = useSettings()
-const { state, isFirstQuestion, hasQuestion } = useState()
+const { state, isFirstQuestion, hasQuestion, isLastQuestion } = useState()
 
 const {  getOptions, getOption, getQuestionKey } = useOptions()
 

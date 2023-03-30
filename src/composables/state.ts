@@ -17,7 +17,8 @@ export const useState = (forceGender?: string) => {
     const state = useFirestore(stateRef, null)
 
     const isFirstQuestion = computed(() => state.value && state.value.question == '0a')
+    const isLastQuestion = computed(() => state.value && state.value.question == '9a')
     const hasQuestion = computed(() => state.value && state.value.question && !isPause(state.value.question))
 
-    return { states, state, isFirstQuestion, hasQuestion }
+    return { states, state, isFirstQuestion, hasQuestion, isLastQuestion }
 }

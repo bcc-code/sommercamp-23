@@ -15,8 +15,8 @@
                 <div class="md:w-1/2 md:mx-auto grid grid-cols-2 gap-x-5 h-20">
                     <button :class="{ 'opacity-50 cursor-default' : !canGoPrevious }" class="bg-dark-yellow" @click="previous">Previous</button>
                     <button :class="{ 'opacity-50 cursor-default' : !canGoNext }" class="bg-orange" @click="next">Next</button>
-                </div> 
-            </div> 
+                </div>
+            </div>
         </div>
     </template>
 </template>
@@ -33,7 +33,7 @@ const { getQuestionById, isPause } = useQuestions()
 const { states } = useState()
 const db = getFirestore()
 
-const sequence = [['p0'], ['0a'], ['p1'], ['1b', 'p1'], ['p2'], ['2b', '2g'], ['p3'], ['3g', 'p3'], ['p4'], ['4g', 'p4'], ['p5'], ['5b', 'p5'], ['p6'], ['6g', 'p6'], ['p7'], ['7b', 'p7'], ['p8']]
+const sequence = [['p0'], ['0a'], ['p1'], ['1b', 'p1'], ['p2'], ['2b', '2g'], ['p3'], ['3g', 'p3'], ['p4'], ['4g', 'p4'], ['p5'], ['5b', 'p5'], ['p6'], ['6g', 'p6'], ['p7'], ['7b', 'p7'], ['p8'], ['9a'], ['p9']]
 
 const currentStepIndex = ref<number>(0)
 const currentStep = computed(() => sequence[currentStepIndex.value])
@@ -59,6 +59,6 @@ watch(() => states.value, () => {
     const questions = states.value.map((doc) => doc.question)
     const sequenceStepIndex = sequence.findIndex((s) => s && questions.every((q) => s.includes(q)))
     if (sequenceStepIndex < 0) return
-    else currentStepIndex.value = sequenceStepIndex;  
+    else currentStepIndex.value = sequenceStepIndex;
 })
 </script>

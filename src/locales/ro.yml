@@ -1,6 +1,6 @@
 name: Română
 language: Limbă
-thankyou: Takk for ditt svar
+thankyou: Mulțumesc pentru răspunsul tău
 menu:
   home: Acasă
 gender: Gen
@@ -9,7 +9,7 @@ genders:
   girl: Fată
 questions:
   0a:
-    text: Cine crezi ca are control asupra user-ului de TikTok?
+    text: Cine crezi ca are controlul asupra contului de TikTok?
     options:
       1: Martine
       2: Sindre
@@ -22,12 +22,12 @@ questions:
       9: Pål
       10: Siril
   1b:
-    text: Ce va alege Sindre?
+    text: Ce să aleagă Sindre?
     options:
-      1: Va accepta să-i fie ascuțite patinele
-      2: Îi va mulțumi lui Eskild pentru ofertă, dar nu o va accepta
+      1: Să accepte să-i fie ascuțite patinele
+      2: Să mulțumească lui Eskild pentru ofertă, dar să nu accepta
   2b:
-    text: Ce va spune Sindre?
+    text: Ce să spună Sindre?
     options:
       1: Va recunoaște că a fost puțin nemilos, dar va da vina pe faptul că a fost presat de Pål și de ceilalți.
       2: Va recunoaște că mesajul de la Peter avea sens. Dar va avertiza să nu se folosească Cuvântul lui Dumnezeu pentru situații greșite.
