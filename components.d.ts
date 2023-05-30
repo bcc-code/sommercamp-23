@@ -5,11 +5,10 @@
 declare module 'vue' {
   export interface GlobalComponents {
     AdminLogin: typeof import('./src/components/AdminLogin.vue')['default']
-    FirstQuestion: typeof import('./src/components/FirstQuestion.vue')['default']
-    LastQuestion: typeof import('./src/components/LastQuestion.vue')['default']
     Question: typeof import('./src/components/Question.vue')['default']
     Sequence: typeof import('./src/components/Sequence.vue')['default']
     Settings: typeof import('./src/components/Settings.vue')['default']
+    Spinner: typeof import('./src/components/Spinner.vue')['default']
   }
 }
 

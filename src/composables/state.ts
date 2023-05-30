@@ -1,24 +1,23 @@
 import { useFirestore } from "@vueuse/firebase"
+import { doc, getFirestore, updateDoc } from "firebase/firestore"
 import { computed } from "vue"
-import { getFirestore, doc, collection } from "firebase/firestore"
-import { useSettings } from './settings'
-import { useQuestions } from "./questions"
 
-export const useState = (forceGender?: string) => {
+export const useState = () => {
     const db = getFirestore()
-    const { isPause } = useQuestions()
-    const { gender } = useSettings()
+    const sequence = ['p0', 'q1', 'p1', 'q2', 'p2', 'q3', 'p3']
 
-    const states = useFirestore(collection(db, 'states'), [])
+    const ref = computed(() => doc(db, 'state', 'state'))
+    const data = useFirestore(ref)
+    const question = computed(() => data.value && String(data.value.question) || '')
 
-    const stateRefOld = computed(() => forceGender ? doc(db, 'states', forceGender) : gender.value && doc(db, 'states', gender.value))
-
-    const stateRef = computed(() => gender.value && doc(db, 'states', gender.value))
-    const state = useFirestore(stateRef, null)
-
-    const isFirstQuestion = computed(() => state.value && state.value.question == '0a')
-    const isLastQuestion = computed(() => state.value && state.value.question == '9a')
-    const hasQuestion = computed(() => state.value && state.value.question && !isPause(state.value.question))
-
-    return { states, state, isFirstQuestion, hasQuestion, isLastQuestion }
+    const updateState = (questionId: string) => {
+        console.log(questionId)
+        updateDoc(ref.value, { question: questionId })
+    }
+    return {
+        data,
+        sequence,
+        question,
+        updateState
+    }
 }

@@ -4,15 +4,32 @@ service cloud.firestore {
         function isAdmin() {
             return exists(/databases/$(database)/documents/admins/$(request.auth.token.email))
         }
-        match /admins/{adminId} {
-            allow read: if isAdmin() && adminId == request.auth.token.email
+
+        function isAuthenticated() {
+            return request.auth != null
         }
-        match /states/{gender} {
-            allow read: if true
+
+        match /{documentId=**} {
             allow read, write: if isAdmin()
         }
+
+        match /users/{userId} {
+            allow read, write: if userId == request.auth.uid
+        }
+
+        match /state/state {
+            allow read: if isAuthenticated()
+            allow read, write: if isAdmin()
+        }
+        
         match /questions/{question} {
-            allow read: if true
+            allow read: if isAuthenticated()
+
+            match /teams/{team}/answers/{userId} {
+                allow create, read: if isAuthenticated()
+                    && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.team ==  team
+                    && request.auth.uid == userId
+            }
         }
     }
 }

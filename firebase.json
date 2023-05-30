@@ -3,7 +3,7 @@
     "rules": "firestore.rules"
   },
   "hosting": {
-    "site": "paske-2023",
+    "site": "sommercamp-23",
     "public": "dist",
     "ignore": [
       "firebase.json",

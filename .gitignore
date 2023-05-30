@@ -2,4 +2,5 @@
 .firebase/
 dist/
 node_modules/
+scripts/
 *.log

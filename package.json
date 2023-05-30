@@ -1,10 +1,11 @@
 {
-  "name": "pc23",
+  "name": "sc23",
   "version": "0.1.0",
-  "description": "A Vue3 application for the PC23 show",
+  "description": "A Vue3 application for the SC23 show",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "scripts": "tsc scripts/generateAnswers.ts",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {

@@ -1,18 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap');
-
-@font-face {
-    font-family: 'Eurostile';
-    font-style: regular;
-    font-weight: 600;
-    src: local(''), url('./eurostile.ttf')
-}
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@200;700&display=swap');
 
 html {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Pathway Extreme', sans-serif;
 }
 
 .main {
-    @apply bg-beige text-beige;
+    @apply bg-comet text-white;
     @apply ;
     min-height: 100vh;
     line-height: 1.6;
@@ -22,11 +15,11 @@ html {
 }
 
 label {
-    @apply text-base font-semibold text-beige;
+    @apply text-base font-semibold text-white;
 }
 
 input, select {
-    @apply mt-1 block w-full rounded-md bg-taupe border border-beige/25 py-4 pl-3 pr-10 text-base;
+    @apply mt-1 block w-full rounded-md bg-comet border border-white/25 py-4 pl-3 pr-10 text-base;
 }
 
 input:focus, select:focus {
@@ -34,15 +27,11 @@ input:focus, select:focus {
 }
 
 button {
-    @apply rounded-md px-6 py-3 shadow-sm;
+    @apply rounded-lg px-3 py-1.5 text-sm shadow-sm;
 }
 
 button:focus {
     @apply outline-none ring-none;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Eurostile', sans-serif;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -66,5 +55,18 @@ h1, h2, h3, h4 {
     scrollbar-width: none;
 }
 .scrollbar-none::-webkit-scrollbar {
-display: none;
+    display: none;
+}
+
+.bg-yellow.glow {
+    box-shadow: 0px 0px 40px 6px rgba(255, 172, 45, 0.85);
+}
+.bg-purple.glow {
+    box-shadow: 0px 0px 40px 6px rgba(165, 112, 158, 0.85);
+}
+.bg-blue.glow {
+    box-shadow: 0px 0px 40px 6px rgba(65, 142, 251,0.85);
+}
+.bg-green.glow {
+    box-shadow: 0px 0px 40px 6px rgba(34, 194, 106,0.85);
 }
