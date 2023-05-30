@@ -24,6 +24,6 @@ jobs:
       - name: Deploy to firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOMMMERCAMP_23 }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOMMERCAMP_23 }}'
           channelId: live
           projectId: sommercamp-23
