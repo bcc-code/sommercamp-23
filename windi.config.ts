@@ -2,6 +2,7 @@ import { defineConfig } from 'windicss/helpers'
 import typography from 'windicss/plugin/typography'
 
 export default defineConfig({
+    safelist: 'bg-yellow bg-green bg-purple bg-blue',
     darkMode: 'class',
     attributify: true,
     plugins: [typography],
