@@ -9,15 +9,14 @@ export const useState = () => {
     const ref = computed(() => doc(db, 'state', 'state'))
     const data = useFirestore(ref)
     const question = computed(() => data.value && String(data.value.question) || '')
+    const questionIdForAdmin = computed(() => question.value && 'q' + question.value.slice(-1))
 
-    const updateState = (questionId: string) => {
-        console.log(questionId)
-        updateDoc(ref.value, { question: questionId })
-    }
+    const updateState = (questionId: string) => updateDoc(ref.value, { question: questionId })
     return {
         data,
         sequence,
         question,
-        updateState
+        updateState,
+        questionIdForAdmin
     }
 }

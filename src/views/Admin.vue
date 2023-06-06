@@ -2,11 +2,12 @@
     <AdminLogin v-if="!adminUser" @submit="Login($event.username, $event.password)"/>
     <template v-else>
         <div class="px-8 pt-16 pb-12 h-full flex flex-col justify-between">
-            <div class="rounded-md bg-granite shadow text-center px-12 py-8">
-                <template v-if="!currentStep || isPause(currentStep)">
-                    <h2 class="text-4xl">Pause</h2>
+            <div class="relative rounded-md bg-granite shadow text-center px-12 py-8">
+                <template v-if="currentStep == 'p0'">
+                    <h2 class="text-4xl">Not started yet</h2>
                 </template>
-                <Question v-else :question="getById(currentStep)" />
+                <Question v-else :question="getById(state.questionIdForAdmin.value)" />
+                <span v-if="currentStep != 'p0' && isPause(currentStep)" class="absolute inset-x-0 top-0 rounded-t-md bg-red">Fryst</span>
             </div>
             <div class="flex flex-col space-y-8">
                <Sequence class="mx-auto" :items="state.sequence" :currentStep="currentStepIndex"/>
@@ -20,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, watchEffect } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useQuestions } from '@/composables/questions'
 import { useAdmin } from '@/composables/admin'
 import { useState } from '@/composables/state'

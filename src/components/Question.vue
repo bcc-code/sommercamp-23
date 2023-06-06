@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col space-y-5" v-if="question">
-        <h2 class="text-3xl font-bold">{{ question.nb }}</h2>
+        <h2 class="text-3xl font-bold">{{ question.id }}. {{ question.nb }}</h2>
         <div class="grid grid-cols-4 gap-x-3 pb-8">
             <button v-for="(team, idx) in teams" :key="team" type="button"
                 class="h-12 font-bold"

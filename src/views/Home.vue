@@ -8,7 +8,7 @@
                 <h1 class="text-xl font-light px-8">Thank you for participating!</h1>
             </div>
         </template>
-        <template v-else-if="!currentQuestion">
+        <template v-else-if="!currentQuestion || currentAnswer">
             <div class="flex flex-col space-y-8 text-center px-20 py-16">
                 <h1 class="text-3xl font-bold" >Venter på neste runde...</h1>
                 <h1 class="text-xl font-light px-8">Waiting for the next round...</h1>
@@ -37,9 +37,9 @@
                 </button>
             </div>
             <div class="w-full text-center flex-grow flex flex-col justify-center">
-                <button type="button" :disabled="currentAnswer != null || !answer"
+                <button type="button" :disabled="!answer"
                     @click="submitAnswer(answer!)"
-                    :class="{ 'opacity-50': currentAnswer || !answer }"
+                    :class="{ 'opacity-50': !answer }"
                     class="bg-red text-white transition-opacity mx-auto">
                     Bekreft/Confirm
                 </button>
@@ -87,9 +87,7 @@ const isFinished = computed(() => {
     return state.question.value == 'p3'
 })
 
-watch(currentAnswer, () => {
-    if (currentAnswer.value) answer.value = currentAnswer.value.answer
-})
+watch(currentQuestion, () => answer.value = undefined)
 </script>
 <style scoped>
 .v-enter-active,
