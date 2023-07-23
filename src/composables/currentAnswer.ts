@@ -1,7 +1,7 @@
 import { useAuth, useFirestore } from "@vueuse/firebase"
 import { getAuth } from "firebase/auth"
-import { getFirestore, collection, doc, setDoc } from "firebase/firestore"
-import { computed, ref } from "vue"
+import { getFirestore, doc, setDoc } from "firebase/firestore"
+import { computed } from "vue"
 import { useState } from "./state"
 import { useSettings } from "./settings"
 

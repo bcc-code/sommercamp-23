@@ -6,6 +6,7 @@
             :class="'md:max-w-md md:shadow-xl md:rounded-xl'">
             <RouterView />
         </div>
+        <span class="absolute bottom-5 right-5 text-white text-xs">v1.2</span>
     </div>
 </template>
 
