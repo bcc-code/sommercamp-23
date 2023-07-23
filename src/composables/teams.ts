@@ -1,5 +1,5 @@
 const teams = ['blue', 'yellow', 'green', 'purple'] as const;
-const teamLeaders = ['Derek', 'Elena', 'Preben', 'Edith'] as const;
+const teamLeaders = ['Preben', 'Guro', 'Johanna', 'Derek'] as const;
 
 export type Team = typeof teams[number]
 
